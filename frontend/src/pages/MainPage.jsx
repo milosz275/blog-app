@@ -6,8 +6,8 @@ const MainPage = () => {
 	return (
 		<TemplatePage>
 			<div className="flex flex-col items-center justify-center">
-				<h1 className="text-5xl font-bold text-center">Welcome to the Blog App</h1>
-				<p className="text-lg text-center mt-4">This is the main page of the website.</p>
+				<h1 className="text-5xl font-bold text-center select-none">Welcome to the Blog App</h1>
+				<p className="text-lg text-center mt-4 select-none">This is the main page of the website.</p>
 			</div>
 		</TemplatePage>
 	);
