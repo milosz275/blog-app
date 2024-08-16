@@ -1,0 +1,39 @@
+{
+    "short_name": "Blog App",
+    "name": "Blog App",
+    "description": "Blog App",
+    "icons": [
+      {
+        "src": "assets/android-chrome-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "assets/android-chrome-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "/",
+    "id": "app.blog",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#000000",
+    "screenshots": [
+        {
+            "src": "assets/screenshot-1.jpg",
+            "sizes": "1024x1034",
+            "type": "image/jpg",
+            "form_factor": "wide",
+            "label": "Wonder Widgets"
+        },
+        {
+            "src": "assets/screenshot-2.jpg",
+            "sizes": "1020x812",
+            "type": "image/jpg",
+            "form_factor": "narrow",
+            "label": "Wonder Widgets"
+        }
+    ]
+}
