@@ -2,6 +2,10 @@
 
 Fullstack blog application with frontend and backend components. The frontend is built with React and the backend is built with Node.js and Express. The frontend and backend are connected with a RESTful API.
 
+## Schema
+
+Schema is generated using Swagger UI and Redoc. After running the app, schema is available at [http://localhost:8000/schema/swagger-ui](http://localhost:8000/schema/swagger-ui/) and [http://localhost:8000/schema/redoc/](http://localhost:8000/schema/redoc/).
+
 ## Features
 
 - [x] Dynamic user profile picture using base64 encoding
