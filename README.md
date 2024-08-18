@@ -1,6 +1,6 @@
 # Blog
 
-Fullstack blog application with frontend and backend components. The frontend is built with React and the backend is built with Node.js and Express. The frontend and backend are connected with a RESTful API.
+Fullstack blog application with frontend and backend components. The frontend is built with React and the backend is built with Node.js and Express. The frontend and backend are connected with a RESTful API. The Application can be set to either act like personal blog or platform for people to create their blog postings.
 
 ## Schema
 
