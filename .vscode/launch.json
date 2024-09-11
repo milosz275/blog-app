@@ -1,0 +1,34 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Django",
+            "type": "debugpy",
+            "request": "launch",
+            "args": [
+                "runserver",
+                "9000"
+            ],
+            "django": true,
+            "autoStartBrowser": false,
+            "program": "${workspaceFolder}/backend/manage.py"
+        },
+        {
+            "name": "Launch Frontend and Backend",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/frontend/index.js",
+            "preLaunchTask": "Run Frontend"
+        },
+        {
+            "name": "Launch Backend",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/backend/manage.py",
+            "args": [
+                "runserver"
+            ],
+            "preLaunchTask": "Run Backend"
+        }
+    ]
+}
