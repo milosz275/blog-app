@@ -11,27 +11,6 @@ Schema is generated using Swagger UI and Redoc. After running the app, schema is
 - [x] Dynamic user profile picture using base64 encoding
 - [x] Dynamic blog post miniature using base64 encoding
 - [x] Functional admin panel with image downloads
-- [ ] Create, read, update, and delete blog posts
-- [ ] View all blog posts
-- [ ] View all blog posts by a single user
-- [ ] View a single blog post
-- [ ] View a list of all authors
-- [ ] View a single author
-- [ ] View all blog posts by a single category
-- [ ] View a list of all categories
-- [ ] View a single category
-- [ ] View all blog posts by a single tag
-- [ ] View a list of all tags
-- [ ] View a single tag
-- [ ] View all blog posts by a single date
-- [ ] View a list of all dates
-- [ ] View a single date
-- [ ] View all blog posts by a single search term
-- [ ] View a list of all search terms
-- [ ] View a single search term
-- [ ] View all blog posts by a single comment
-- [ ] View a list of all comments
-- [ ] View a single comment
 
 ## Technologies
 
