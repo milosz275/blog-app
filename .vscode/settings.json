@@ -1,0 +1,63 @@
+{
+    "cSpell.language": "en,pl",
+    "cSpell.words": [
+        "asgi",
+        "corsheaders",
+        "createsuperuser",
+        "csrftoken",
+        "Darkmode",
+        "dast",
+        "dotenv",
+        "filterwarnings",
+        "gtag",
+        "isort",
+        "jetbrains",
+        "makemigrations",
+        "mldxo",
+        "predeploy",
+        "pytest",
+        "rainforest",
+        "Redoc",
+        "runserver",
+        "safeweb",
+        "samesite",
+        "SAST",
+        "simplejwt",
+        "tailwindcss",
+        "TTFB",
+        "venv",
+        "viewsets"
+    ],
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.formatOnPaste": true,
+        "editor.rulers": [
+            200
+        ],
+        "editor.tabSize": 4,
+        "editor.wordWrap": "on",
+        "editor.wordWrapColumn": 200
+    },
+    "python.testing.pytestArgs": [
+        "backend"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "python.analysis.typeCheckingMode": "basic",
+    "task.allowAutomaticTasks": "on",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "always"
+    },
+    "editor.formatOnSaveMode": "file",
+    "editor.formatOnType": true,
+    "editor.formatOnPaste": true,
+    "editor.rulers": [
+        200
+    ],
+    "editor.tabSize": 4,
+    "editor.wordWrap": "on",
+    "editor.wordWrapColumn": 200
+}
