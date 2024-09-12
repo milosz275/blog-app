@@ -1,5 +1,8 @@
 # Blog App
 
+[![GitHub Tag](https://img.shields.io/github/v/tag/mldxo/blog-app)](https://github.com/mldxo/blog-app/)
+[![License](https://img.shields.io/github/license/mldxo/blog-app)](LICENSE)
+
 Fullstack blog application with frontend and backend components. The frontend is built with React and the backend is built with Node.js and Express. The frontend and backend are connected with a RESTful API. The Application can be set to either act like personal blog or platform for people to create their blog postings.
 
 ## Schema
