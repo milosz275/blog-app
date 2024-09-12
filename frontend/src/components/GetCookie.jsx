@@ -1,4 +1,4 @@
-export const getCookie = (name) => {
+export const GetCookie = (name) => {
     let cookieValue = null;
     if (document.cookie && document.cookie !== "") {
         let cookies = document.cookie.split(";");
