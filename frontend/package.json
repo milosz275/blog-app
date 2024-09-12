@@ -13,6 +13,7 @@
     "autoprefixer": "^10.4.20",
     "i18next": "^23.15.1",
     "i18next-browser-languagedetector": "^8.0.0",
+    "i18next-http-backend": "^2.6.1",
     "postcss": "^8.4.41",
     "react": "^18.3.1",
     "react-cookie-consent": "^9.0.0",
