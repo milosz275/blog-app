@@ -12,6 +12,7 @@
         "gtag",
         "isort",
         "jetbrains",
+        "languagedetector",
         "makemigrations",
         "mldxo",
         "predeploy",
