@@ -1,0 +1,18 @@
+{
+    "app_name": "Blog",
+    "app_name_blur": "Aplikacja Blogowa",
+    "welcome": "Witamy w aplikacji Blogowej!",
+    "description": "To jest strona główna aplikacji.",
+    "cookies": "Ta strona używa plików cookies, aby zapewnić najlepsze doświadczenie na naszej stronie.",
+    "learn_more": "Dowiedz się więcej",
+    "accept": "Akceptuj",
+    "decline": "Odrzuć",
+    "language": "Język",
+    "english": "Angielski",
+    "polish": "Polski",
+    "search": "Szukaj",
+    "search_placeholder": "Szukaj artykułów...",
+    "search_results": "Wyniki wyszukiwania",
+    "search_no_results": "Nie znaleziono wyników.",
+    "search_results_for": "Wyniki wyszukiwania dla"
+}
