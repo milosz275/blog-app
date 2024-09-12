@@ -1,4 +1,4 @@
-export const setCookie = (name, value, options = {}) => {
+export const SetCookie = (name, value, options = {}) => {
     if (!name || /^(?:\s|%20)+$/.test(name)) {
         return;
     }

@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { getCookie } from "../components/GetCookie";
-import { setCookie } from "../components/SetCookie";
+import { GetCookie } from "../components/GetCookie";
+import { SetCookie } from "../components/SetCookie";
 
 const useCheckDarkMode = () => {
   const [theme, setTheme] = useState(document.documentElement.classList.contains("dark") ? "dark" : "light");
 
   useEffect(() => {
-    let darkThemeCookie = getCookie("dark-theme");
+    let darkThemeCookie = GetCookie("dark-theme");
     if (darkThemeCookie) {
       setTheme(darkThemeCookie === "true" ? "dark" : "light");
     }
@@ -15,7 +15,7 @@ const useCheckDarkMode = () => {
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", theme === "dark");
-    setCookie("dark-theme", theme === "dark" ? "true" : "false");
+    SetCookie("dark-theme", theme === "dark" ? "true" : "false");
   }, [theme]);
 
   const toggleTheme = () => {

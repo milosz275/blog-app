@@ -23,14 +23,14 @@
     "screenshots": [
         {
             "src": "assets/screenshot-1.jpg",
-            "sizes": "1024x1034",
+            "sizes": "1384x1014",
             "type": "image/jpg",
             "form_factor": "wide",
             "label": "Wonder Widgets"
         },
         {
             "src": "assets/screenshot-2.jpg",
-            "sizes": "1020x812",
+            "sizes": "1384x1014",
             "type": "image/jpg",
             "form_factor": "narrow",
             "label": "Wonder Widgets"
