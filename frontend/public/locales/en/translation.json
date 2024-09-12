@@ -1,0 +1,18 @@
+{
+    "app_name": "Blog",
+    "app_name_blur": "Blog App",
+    "welcome": "Welcome to the Blog App!",
+    "description": "This is the main page of the website.",
+    "cookies": "This website uses cookies to ensure you get the best experience on our website.",
+    "learn_more": "Learn more",
+    "accept": "Accept",
+    "decline": "Decline",
+    "language": "Language",
+    "english": "English",
+    "polish": "Polish",
+    "search": "Search",
+    "search_placeholder": "Search for articles...",
+    "search_results": "Search Results",
+    "search_no_results": "No results found.",
+    "search_results_for": "Search results for"
+}
