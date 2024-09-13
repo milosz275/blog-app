@@ -1,11 +1,12 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useEffect } from "react";
-import LogOut from "../components/LogOut";
+import { useEffect } from "react";
+import LogOut from "../handlers/useLogOut";
 
 const LogoutPage = () => {
+    const logout = LogOut();
+
     useEffect(() => {
-        LogOut();
-    }, []);
+        logout();
+    }, [logout]);
 
     return (
         <></>
