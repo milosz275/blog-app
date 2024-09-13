@@ -46,8 +46,9 @@ jobs:
           cd ${{ env.FRONTEND_PATH }}
           npm run build
 
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          name: frontend-build
-          path: ${{ env.FRONTEND_PATH }}/dist
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ${{ env.FRONTEND_PATH }}/dist
+
