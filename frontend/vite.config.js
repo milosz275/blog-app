@@ -7,7 +7,12 @@ export default defineConfig({
   build: {
     rollupOptions: {
       external: [
-        '/blog-app/assets/index-BXGh_3uy.js',
+        'react',
+        'react-dom',
+        'react-router-dom',
+        'react-query',
+        'react-markdown',
+        'react-syntax-highlighter',
       ],
     },
   },
