@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import MainPage from "./pages/MainPage";
 import DebugPage from "./pages/DebugPage";
+import LogoutPage from "./pages/LogoutPage";
 import RedirectPage from "./pages/RedirectPage";
 import * as urls from "./urls";
 
@@ -36,6 +37,8 @@ function App() {
 				<Routes>
 					<Route path={urls.ROOT_URL} element={<MainPage />} />
 					<Route path={urls.DEBUG_URL} element={<DebugPage />} />
+					<Route path={urls.LOGOUT_URL} element={<LogoutPage />} />
+					<Route path={urls.LOGOUT_URL_PL} element={<LogoutPage />} />
 					<Route path="*" element={<RedirectPage />} />
 				</Routes>
 			</BrowserRouter>
