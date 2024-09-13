@@ -18,7 +18,7 @@
     "id": "app.blog",
     "background_color": "#ffffff",
     "display": "standalone",
-    "scope": "/",
+    "scope": "/blog-app/",
     "theme_color": "#000000",
     "screenshots": [
         {

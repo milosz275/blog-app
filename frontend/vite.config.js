@@ -7,13 +7,19 @@ export default defineConfig({
   build: {
     rollupOptions: {
       external: [
-        'react',
-        'react-dom',
-        'react-router-dom',
-        'react-query',
-        'react-markdown',
-        'react-syntax-highlighter',
+        "/blog-app/assets/index-bjI_iJDI.js",
       ],
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            return 'vendor';
+          }
+        },
+        entryFileNames: 'assets/[name]-[hash].js',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]',
+        publicPath: '/blog-app/', // Ensure the base path is applied to all asset paths
+      },
     },
   },
 })
