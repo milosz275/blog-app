@@ -3,7 +3,7 @@
 [![GitHub Tag](https://img.shields.io/github/v/tag/mldxo/blog-app)](https://github.com/mldxo/blog-app/)
 [![License](https://img.shields.io/github/license/mldxo/blog-app)](LICENSE)
 
-Fullstack blog application with frontend and backend components. The frontend is built with React and the backend is built with Node.js and Express. The frontend and backend are connected with a RESTful API. The Application can be set to either act like personal blog or platform for people to create their blog postings.
+Fullstack [blog](https://github.com/mldxo/blog-app) application with frontend and backend components. The frontend is built with React and the backend is built with Node.js and Express. The frontend and backend are connected with a RESTful API. The Application can be set to either act like personal blog or platform for people to create their blog postings.
 
 ## Schema
 
@@ -11,6 +11,15 @@ Schema is generated using Swagger UI and Redoc. After running the app, schema is
 
 ## Features
 
+### Frontend
+
+- [ ] Main page with blog posts and features
+- [x] User logout
+
+### Backend
+
+- [x] User registration
+- [x] User login
 - [x] Dynamic user profile picture using base64 encoding
 - [x] Dynamic blog post miniature using base64 encoding
 - [x] Functional admin panel with image downloads
