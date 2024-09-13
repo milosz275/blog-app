@@ -8,19 +8,19 @@ const MainPage = () => {
 
 	const features = [
 		{
-			imgSrc: "/assets/undraw_code_review_l1q9.svg",
+			imgSrc: "/blog-app/assets/undraw_code_review_l1q9.svg",
 			imgAlt: "code_review",
 			titleKey: "main_page.features.feature_1.title",
 			descriptionKey: "main_page.features.feature_1.description",
 		},
 		{
-			imgSrc: "/assets/undraw_programming_2svr.svg",
+			imgSrc: "/blog-app/assets/undraw_programming_2svr.svg",
 			imgAlt: "programming",
 			titleKey: "main_page.features.feature_2.title",
 			descriptionKey: "main_page.features.feature_2.description",
 		},
 		{
-			imgSrc: "/assets/undraw_version_control_9bpv.svg",
+			imgSrc: "/blog-app/assets/undraw_version_control_9bpv.svg",
 			imgAlt: "version_control",
 			titleKey: "main_page.features.feature_3.title",
 			descriptionKey: "main_page.features.feature_3.description",
@@ -37,7 +37,7 @@ const MainPage = () => {
 					</div>
 					<div className="flex flex-col w-full items-center justify-center select-none mt-12 sm:mt-0 hover:scale-100 sm:hover:scale-105 transition-all duration-200 ease-linear">
 						<img
-							src="/assets/undraw_code_thinking_1jeh.svg"
+							src="/blog-app/assets/undraw_code_thinking_1jeh.svg"
 							alt="code_thinking"
 							draggable="false"
 							className="w-64 drop-shadow-md dark:drop-shadow-light object-cover" />
