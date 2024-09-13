@@ -1,0 +1,142 @@
+{
+    "app_name": "Blog",
+    "app_name_blur": "Aplikacja Blog",
+    "app_name_description": "Aplikacja blogowa dla programistów",
+    "app_name_short": "Blog",
+    "app_name_short_description": "Aplikacja blogowa",
+    "too_small_width": "Twój wyświetlacz ma za małą rozdzielczość, aby wyświetlić tę stronę.",
+    "main_page": {
+        "title": "Witaj na Blogu",
+        "description": "Aplikacja blogowa dla programistów",
+        "get_started": "Rozpocznij",
+        "learn_more": "Dowiedz się więcej",
+        "features": {
+            "title": "Funkcje",
+            "feature_1": {
+                "title": "Funkcja 1",
+                "description": "Opis funkcji 1"
+            },
+            "feature_2": {
+                "title": "Funkcja 2",
+                "description": "Opis funkcji 2"
+            },
+            "feature_3": {
+                "title": "Funkcja 3",
+                "description": "Opis funkcji 3"
+            }
+        }
+    },
+    "header": {
+        "home": "Strona główna",
+        "about": "O nas",
+        "contact": "Kontakt",
+        "login": "Zaloguj",
+        "register": "Zarejestruj",
+        "logout": "Wyloguj"
+    },
+    "footer": {
+        "all_rights_reserved": "Wszelkie prawa zastrzeżone.",
+        "terms_of_service": "Warunki świadczenia usług",
+        "privacy_policy": "Polityka prywatności",
+        "cookie_policy": "Ta strona używa plików cookie, aby zapewnić najlepsze doświadczenia na naszej stronie.",
+        "cookie_consent": "Zgadzam się"
+    },
+    "about": {
+        "title": "O nas",
+        "description": "To jest aplikacja blogowa dla programistów"
+    },
+    "contact": {
+        "title": "Kontakt",
+        "description": "Skontaktuj się z nami"
+    },
+    "login": {
+        "title": "Zaloguj",
+        "description": "Zaloguj się na swoje konto",
+        "email": "Email",
+        "password": "Hasło",
+        "login": "Zaloguj",
+        "register": "Zarejestruj",
+        "forgot_password": "Zapomniałeś hasła?"
+    },
+    "register": {
+        "title": "Zarejestruj",
+        "description": "Zarejestruj się na konto",
+        "name": "Imię",
+        "email": "Email",
+        "password": "Hasło",
+        "confirm_password": "Potwierdź hasło",
+        "register": "Zarejestruj",
+        "login": "Zaloguj"
+    },
+    "forgot_password": {
+        "title": "Zapomniałeś hasła",
+        "description": "Zapomniałeś hasła?",
+        "email": "Email",
+        "send": "Wyślij",
+        "login": "Zaloguj"
+    },
+    "reset_password": {
+        "title": "Zresetuj hasło",
+        "description": "Zresetuj swoje hasło",
+        "password": "Hasło",
+        "confirm_password": "Potwierdź hasło",
+        "reset": "Zresetuj",
+        "login": "Zaloguj"
+    },
+    "profile": {
+        "title": "Profil",
+        "description": "Twój profil",
+        "name": "Imię",
+        "email": "Email",
+        "update": "Aktualizuj",
+        "change_password": "Zmień hasło",
+        "delete": "Usuń konto"
+    },
+    "change_password": {
+        "title": "Zmień hasło",
+        "description": "Zmień swoje hasło",
+        "current_password": "Aktualne hasło",
+        "new_password": "Nowe hasło",
+        "confirm_password": "Potwierdź hasło",
+        "change": "Zmień",
+        "profile": "Profil"
+    },
+    "delete_account": {
+        "title": "Usuń konto",
+        "description": "Usuń swoje konto",
+        "password": "Hasło",
+        "delete": "Usuń",
+        "profile": "Profil"
+    },
+    "posts": {
+        "title": "Posty",
+        "description": "Lista postów",
+        "create": "Utwórz post",
+        "no_posts": "Brak postów",
+        "delete": "Usuń",
+        "edit": "Edytuj",
+        "view": "Zobacz"
+    },
+    "create_post": {
+        "title": "Utwórz post",
+        "description": "Utwórz nowy post",
+        "post_title": "Tytuł posta",
+        "content": "Treść",
+        "create": "Utwórz",
+        "posts": "Posty"
+    },
+    "edit_post": {
+        "title": "Edytuj post",
+        "description": "Edytuj post",
+        "post_title": "Tytuł posta",
+        "content": "Treść",
+        "update": "Aktualizuj",
+        "posts": "Posty"
+    },
+    "delete_post": {
+        "title": "Usuń post",
+        "description": "Usuń post",
+        "delete": "Usuń",
+        "posts": "Posty"
+    }
+}
