@@ -27,6 +27,7 @@ jobs:
             echo "FRONTEND_PATH=./frontend" >> $GITHUB_ENV
           else
             echo "FRONTEND_PATH=." >> $GITHUB_ENV
+          fi  # Closing the if block
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
