@@ -1,18 +1,142 @@
 {
     "app_name": "Blog",
     "app_name_blur": "Blog App",
-    "welcome": "Welcome to the Blog App!",
-    "description": "This is the main page of the website.",
-    "cookies": "This website uses cookies to ensure you get the best experience on our website.",
-    "learn_more": "Learn more",
-    "accept": "Accept",
-    "decline": "Decline",
-    "language": "Language",
-    "english": "English",
-    "polish": "Polish",
-    "search": "Search",
-    "search_placeholder": "Search for articles...",
-    "search_results": "Search Results",
-    "search_no_results": "No results found.",
-    "search_results_for": "Search results for"
+    "app_name_description": "A blog app for developers",
+    "app_name_short": "Blog",
+    "app_name_short_description": "A blog app",
+    "too_small_width": "Your screen is too small to display this page.",
+    "main_page": {
+        "title": "Welcome to Blog",
+        "description": "A blog app for developers",
+        "get_started": "Get Started",
+        "learn_more": "Learn More",
+        "features": {
+            "title": "Features",
+            "feature_1": {
+                "title": "Feature 1",
+                "description": "Feature 1 description"
+            },
+            "feature_2": {
+                "title": "Feature 2",
+                "description": "Feature 2 description"
+            },
+            "feature_3": {
+                "title": "Feature 3",
+                "description": "Feature 3 description"
+            }
+        }
+    },
+    "header": {
+        "home": "Home",
+        "about": "About",
+        "contact": "Contact",
+        "login": "Login",
+        "register": "Register",
+        "logout": "Logout"
+    },
+    "footer": {
+        "all_rights_reserved": "All rights reserved.",
+        "terms_of_service": "Terms of Service",
+        "privacy_policy": "Privacy Policy",
+        "cookie_policy": "This website uses cookies to ensure you get the best experience on our website.",
+        "cookie_consent": "I agree"
+    },
+    "about": {
+        "title": "About",
+        "description": "This is a blog app for developers"
+    },
+    "contact": {
+        "title": "Contact",
+        "description": "Contact us"
+    },
+    "login": {
+        "title": "Login",
+        "description": "Login to your account",
+        "email": "Email",
+        "password": "Password",
+        "login": "Login",
+        "register": "Register",
+        "forgot_password": "Forgot password?"
+    },
+    "register": {
+        "title": "Register",
+        "description": "Register for an account",
+        "name": "Name",
+        "email": "Email",
+        "password": "Password",
+        "confirm_password": "Confirm Password",
+        "register": "Register",
+        "login": "Login"
+    },
+    "forgot_password": {
+        "title": "Forgot Password",
+        "description": "Forgot your password?",
+        "email": "Email",
+        "send": "Send",
+        "login": "Login"
+    },
+    "reset_password": {
+        "title": "Reset Password",
+        "description": "Reset your password",
+        "password": "Password",
+        "confirm_password": "Confirm Password",
+        "reset": "Reset",
+        "login": "Login"
+    },
+    "profile": {
+        "title": "Profile",
+        "description": "User profile",
+        "name": "Name",
+        "email": "Email",
+        "update": "Update",
+        "change_password": "Change Password",
+        "delete": "Delete Account"
+    },
+    "change_password": {
+        "title": "Change Password",
+        "description": "Change your password",
+        "current_password": "Current Password",
+        "new_password": "New Password",
+        "confirm_password": "Confirm Password",
+        "change": "Change",
+        "profile": "Profile"
+    },
+    "delete_account": {
+        "title": "Delete Account",
+        "description": "Delete your account",
+        "password": "Password",
+        "delete": "Delete",
+        "profile": "Profile"
+    },
+    "posts": {
+        "title": "Posts",
+        "description": "All posts",
+        "create": "Create Post",
+        "no_posts": "No posts",
+        "delete": "Delete",
+        "edit": "Edit",
+        "view": "View"
+    },
+    "create_post": {
+        "title": "Create Post",
+        "description": "Create a new post",
+        "post_title": "Title",
+        "content": "Content",
+        "create": "Create",
+        "posts": "Posts"
+    },
+    "edit_post": {
+        "title": "Edit Post",
+        "description": "Edit your post",
+        "post_title": "Title",
+        "content": "Content",
+        "update": "Update",
+        "posts": "Posts"
+    },
+    "delete_post": {
+        "title": "Delete Post",
+        "description": "Delete your post",
+        "delete": "Delete",
+        "posts": "Posts"
+    }
 }
