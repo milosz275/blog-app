@@ -33,7 +33,7 @@ const Footer = () => {
                 onMouseLeave={() => setIsHovered(false)}
                 onClick={() => window.open("https://github.com/mldxo", "_blank")}
             >
-                <div className="flex flex-row justify-center items-center min-w-4 sm:min-w-5 ml-4 sm:ml-0 -mr-3 sm:-mr-0">
+                <div className="flex flex-row justify-center items-center min-w-4 sm:min-w-5 ml-4 sm:ml-2 md:ml-0 -mr-3 sm:-mr-0">
                     {isHovered && avatarUrl ? (
                         <img src={avatarUrl
                         } alt="Avatar" className="inline-block h-4 object-fit rounded-full" />
@@ -41,7 +41,7 @@ const Footer = () => {
                         <>&copy;</>
                     )}
                 </div>
-                <div>
+                <div className="ml-3 sm:ml-0">
                     {createdYear}-{new Date().getFullYear()}
                     &nbsp; Miłosz Maculewicz - {t("footer.all_rights_reserved")}
                 </div>
