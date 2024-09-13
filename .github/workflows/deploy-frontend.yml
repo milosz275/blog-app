@@ -33,6 +33,11 @@ jobs:
             echo "FRONTEND_PATH=./frontend" >> $GITHUB_ENV
           else
             echo "FRONTEND_PATH=." >> $GITHUB_ENV
+          
+          # Check for a lock file
+          if [ ! -f "${{ env.FRONTEND_PATH }}/package-lock.json" ] && [ ! -f "${{ env.FRONTEND_PATH }}/yarn.lock" ]; then
+            echo "Error: No lock file found. Please ensure a package-lock.json or yarn.lock is present."
+            exit 1
           fi
 
       - name: Install dependencies
