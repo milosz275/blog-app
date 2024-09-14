@@ -12,6 +12,15 @@ Schema is generated using Swagger UI and Redoc. After running the app, schema is
 
 ## Features
 
+Application variants:
+
+- Personal Blog
+- Forum with user registration
+
+Personal blog offers the page owner to create blog posts and modify them with Django admin panel. People can view public posts and provide their feedback if verified the email. Frontend login and registration components are disabled.
+
+Forum offers user registration and login with password, adjustable user profile, and blog post creation with an option to react to other people's posts if logged in.
+
 ### Frontend
 
 - [ ] Main page with blog posts and features
