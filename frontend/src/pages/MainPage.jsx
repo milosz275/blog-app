@@ -44,7 +44,7 @@ const MainPage = () => {
 					</div>
 				</div>
 				<div className="flex flex-col w-full max-w-6xl items-center justify-center mx-auto mt-32 mb-8 select-none">
-					<h1 className="text-3xl font-bold text-center mb-6 transition-all duration-200 ease-linear">{t("main_page.features.title")}</h1>
+					<h1 className="text-3xl font-bold text-center hover:scale-105 mb-6 transition-all duration-200 ease-linear">{t("main_page.features.title")}</h1>
 					<div className="flex flex-col sm:flex-row w-full items-center justify-center select-none">
 						{features.map((feature, index) => (
 							<div key={index} className="flex flex-col w-full sm:w-1/3 items-center justify-center select-none mt-8 sm:mt-0 hover:scale-100 sm:hover:scale-105 transition-all duration-200 ease-linear">
