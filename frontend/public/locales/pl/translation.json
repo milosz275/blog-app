@@ -6,7 +6,7 @@
     "app_name_short_description": "Aplikacja blogowa",
     "too_small_width": "Twój wyświetlacz ma za małą rozdzielczość, aby wyświetlić tę stronę.",
     "main_page": {
-        "title": "Witaj na Blogu",
+        "title": "Witaj na Blogu!",
         "description": "Aplikacja blogowa dla programistów",
         "get_started": "Rozpocznij",
         "learn_more": "Dowiedz się więcej",
@@ -24,6 +24,10 @@
                 "title": "Funkcja 3",
                 "description": "Opis funkcji 3"
             }
+        },
+        "notification": {
+            "title": "Witaj na Blogu!",
+            "message": "Dostosowywalna aplikacja blogowa dla programistów"
         }
     },
     "header": {
