@@ -5,7 +5,7 @@ function ThemeToggleButton() {
   const { theme, toggleTheme } = useCheckDarkMode();
 
   return (
-    <div className="fixed left-4 top-5 z-50">
+    <div className="fixed left-5 top-5 z-50">
       <button
         onClick={toggleTheme}
         className="w-14 h-8 p-1 bg-slate-100 dark:bg-gray-700 hover:bg-slate-200 dark:hover:bg-gray-800 text-lg rounded-full flex items-center justify-between transition-all duration-300 ease-in-out transform"
