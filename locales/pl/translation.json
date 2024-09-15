@@ -43,7 +43,8 @@
         "terms_of_service": "Warunki świadczenia usług",
         "privacy_policy": "Polityka prywatności",
         "cookie_policy": "Ta strona używa plików cookie, aby zapewnić najlepsze doświadczenia na naszej stronie.",
-        "cookie_consent": "Zgadzam się"
+        "cookie_consent": "Zgadzam się",
+        "last_deploy": "Ostatnie wdrożenie:"
     },
     "about": {
         "title": "O nas",

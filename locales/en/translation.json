@@ -43,7 +43,8 @@
         "terms_of_service": "Terms of Service",
         "privacy_policy": "Privacy Policy",
         "cookie_policy": "This website uses cookies to ensure you get the best experience on our website.",
-        "cookie_consent": "I agree"
+        "cookie_consent": "I agree",
+        "last_deploy": "Last deploy:"
     },
     "about": {
         "title": "About",
