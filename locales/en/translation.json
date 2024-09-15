@@ -6,7 +6,7 @@
     "app_name_short_description": "A blog app",
     "too_small_width": "Your screen is too small to display this page.",
     "main_page": {
-        "title": "Welcome to Blog",
+        "title": "Welcome to the Blog!",
         "description": "A blog app for developers",
         "get_started": "Get Started",
         "learn_more": "Learn More",
@@ -24,6 +24,10 @@
                 "title": "Feature 3",
                 "description": "Feature 3 description"
             }
+        },
+        "notification": {
+            "title": "Welcome to the Blog!",
+            "message": "This is a customizable blog app for developers"
         }
     },
     "header": {
