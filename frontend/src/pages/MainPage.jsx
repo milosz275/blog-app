@@ -51,7 +51,7 @@ const MainPage = () => {
 				<div className="flex flex-col sm:flex-row w-full max-w-5xl mx-auto items-center justify-center">
 					<div className="flex flex-col w-full items-center justify-center select-none h-full mt-32 sm:mt-0 hover:scale-100 sm:hover:scale-105 hover:opacity-75 transition-all duration-200 ease-linear">
 						<h1 className="text-5xl font-bold text-center">{t("main_page.title")}</h1>
-						<p className="text-xl text-center mt-0 sm:mt-3">{t("main_page.description")}</p>
+						<p className="text-xl text-center mt-2 sm:mt-3">{t("main_page.description")}</p>
 					</div>
 					<div className="flex flex-col w-full items-center justify-center select-none mt-12 sm:mt-0 hover:scale-100 sm:hover:scale-105 transition-all duration-200 ease-linear">
 						<img
