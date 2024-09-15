@@ -4,8 +4,11 @@ import PropTypes from 'prop-types';
 import ThemeToggleButton from "../functions/themeToggleButton";
 import LanguageToggleButton from "../functions/languageToggleButton";
 import Footer from "../components/Footer";
-import CookieConsent from "react-cookie-consent";
+import { SetCookie } from "../components/SetCookie";
+import { GetCookie } from "../components/GetCookie";
 import { useTranslation } from "react-i18next";
+import { Store } from "react-notifications-component"
+import "react-notifications-component/dist/theme.css"
 
 TemplatePage.propTypes = {
 	children: PropTypes.node.isRequired
@@ -23,6 +26,26 @@ function TemplatePage({ children }) {
 		return () => window.removeEventListener("resize", handleResize);
 	}, [windowWidth]);
 
+	useEffect(() => {
+		const cookieConsent = GetCookie("cookie-consent");
+		if (!cookieConsent) {
+			Store.addNotification({
+				title: "Cookies",
+				message: "This website uses cookies to enhance the user experience.",
+				type: "info",
+				container: "bottom-right",
+				insert: "bottom",
+				animationIn: ["animate__animated", "animate__fadeIn"],
+				animationOut: ["animate__animated", "animate__fadeOut"],
+				dismiss: {
+					duration: 5000,
+					onScreen: true
+				}
+			});
+			SetCookie("cookie-consent", "true");
+		}
+	}, []);
+
 	return (
 		windowWidth > 200 ? (
 			<div className="flex flex-col min-h-screen font-inter transition-all duration-200 bg-modern-light/[.4]">
@@ -32,25 +55,6 @@ function TemplatePage({ children }) {
 					{children}
 				</div>
 				<Footer />
-				<div id="cookie-consent">
-					<CookieConsent
-						buttonText={t("footer.cookie_consent")}
-						style={{
-							background: "#121212",
-							fontSize: "14px",
-							color: "#fff",
-							textAlign: "left"
-						}}
-						buttonStyle={{
-							background: "#333333",
-							fontSize: "14px",
-							color: "#fff",
-							textAlign: "center",
-							padding: "2px",
-						}}>
-						{t("footer.cookie_policy")}{" "}
-					</CookieConsent>
-				</div>
 			</div>
 		) : (
 			<>

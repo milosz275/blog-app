@@ -1,7 +1,9 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useEffect } from "react";
 import TemplatePage from "../pages/TemplatePage";
 import { useTranslation } from "react-i18next";
+import { Store } from "react-notifications-component"
+import "react-notifications-component/dist/theme.css"
 
 const MainPage = () => {
 	const { t } = useTranslation();
@@ -26,6 +28,22 @@ const MainPage = () => {
 			descriptionKey: "main_page.features.feature_3.description",
 		},
 	];
+
+	useEffect(() => {
+		Store.addNotification({
+			title: t("main_page.notification.title"),
+			message: t("main_page.notification.message"),
+			type: "success",
+			insert: "bottom",
+			container: "bottom-right",
+			animationIn: ["animate__animated", "animate__fadeIn"],
+			animationOut: ["animate__animated", "animate__fadeOut"],
+			dismiss: {
+				duration: 5000,
+				onScreen: true,
+			},
+		});
+	}, [t]);
 
 	return (
 		<TemplatePage>
