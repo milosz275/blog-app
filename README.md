@@ -74,7 +74,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [Django REST framework](https://www.django-rest-framework.org/)
 - [React](https://reactjs.org/)
 - [Django](https://www.djangoproject.com/)
-- [Undraw code thinking illustration](https://github.com/chriscarlisle/chriscarlisle.github.io/blob/master/undraw_code_thinking_1jeh.svg)
-- [Undraw programming illustration](https://github.com/WebsyIO/blog-posts/blob/master/undraw_programming_2svr.svg)
-- [Undraw code review illustration](https://github.com/jetleebruce/jetleebruce.github.io/blob/master/undraw_code_review_l1q9.svg)
-- [Undraw version control illustration](https://github.com/ayushhurdey/ayushhurdey/blob/main/undraw_version_control_9bpv.svg)
+- [Undraw illustrations](https://undraw.co/)
