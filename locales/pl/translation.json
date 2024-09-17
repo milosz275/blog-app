@@ -6,28 +6,36 @@
     "app_name_short_description": "Aplikacja blogowa",
     "too_small_width": "Twój wyświetlacz ma za małą rozdzielczość, aby wyświetlić tę stronę.",
     "main_page": {
-        "title": "Witaj na Blogu!",
-        "description": "Aplikacja blogowa dla programistów",
-        "get_started": "Rozpocznij",
+        "title": "Witamy na Dev Blogu!",
+        "description": "Platforma blogowa dla programistów do dzielenia się kodem, projektami i spostrzeżeniami.",
+        "get_started": "Zacznij",
         "learn_more": "Dowiedz się więcej",
         "features": {
-            "title": "Funkcje",
+            "title": "Funkcje dla programistów",
             "feature_1": {
-                "title": "Funkcja 1",
-                "description": "Opis funkcji 1"
+                "title": "Przeglądy kodu",
+                "description": "Współpracuj z innymi poprzez przeglądy kodu online, otrzymuj i udzielaj opinii."
             },
             "feature_2": {
-                "title": "Funkcja 2",
-                "description": "Opis funkcji 2"
+                "title": "Samouczki programistyczne",
+                "description": "Twórz i udostępniaj szczegółowe samouczki programistyczne z przykładami kodu na żywo."
             },
             "feature_3": {
-                "title": "Funkcja 3",
-                "description": "Opis funkcji 3"
+                "title": "Integracja z kontrolą wersji",
+                "description": "Śledź i zarządzaj wersjami swoich postów, aby wszystkie aktualizacje były widoczne."
+            },
+            "feature_4": {
+                "title": "Fragmenty kodu",
+                "description": "Łatwo osadzaj i udostępniaj fragmenty kodu z podświetleniem składni w wielu językach."
+            },
+            "feature_5": {
+                "title": "Integracja z GitHub",
+                "description": "Pokaż swoje projekty i wkłady na GitHubie bezpośrednio w postach na blogu."
             }
         },
         "notification": {
-            "title": "Witaj na Blogu!",
-            "message": "Dostosowywalna aplikacja blogowa dla programistów"
+            "title": "Witamy na blogu!",
+            "message": "To konfigurowalna aplikacja blogowa dla programistów."
         }
     },
     "header": {

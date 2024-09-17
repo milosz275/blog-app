@@ -6,28 +6,36 @@
     "app_name_short_description": "A blog app",
     "too_small_width": "Your screen is too small to display this page.",
     "main_page": {
-        "title": "Welcome to the Blog!",
-        "description": "A blog app for developers",
+        "title": "Welcome to Dev Blog!",
+        "description": "A blog platform for developers to share code, projects, and insights.",
         "get_started": "Get Started",
         "learn_more": "Learn More",
         "features": {
-            "title": "Features",
+            "title": "Developer Features",
             "feature_1": {
-                "title": "Feature 1",
-                "description": "Feature 1 description"
+                "title": "Code Reviews",
+                "description": "Collaborate with others through inline code reviews, giving and receiving feedback."
             },
             "feature_2": {
-                "title": "Feature 2",
-                "description": "Feature 2 description"
+                "title": "Programming Tutorials",
+                "description": "Create and share detailed programming tutorials with live code examples."
             },
             "feature_3": {
-                "title": "Feature 3",
-                "description": "Feature 3 description"
+                "title": "Version Control Integration",
+                "description": "Track and manage versions of your blog posts, ensuring all updates are visible."
+            },
+            "feature_4": {
+                "title": "Code Snippets",
+                "description": "Easily embed and share code snippets with syntax highlighting in multiple languages."
+            },
+            "feature_5": {
+                "title": "GitHub Integration",
+                "description": "Showcase your GitHub projects and contributions directly in your blog posts."
             }
         },
         "notification": {
             "title": "Welcome to the Blog!",
-            "message": "This is a customizable blog app for developers"
+            "message": "This is a customizable blog app for developers."
         }
     },
     "header": {
