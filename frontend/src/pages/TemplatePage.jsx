@@ -51,7 +51,7 @@ function TemplatePage({ children }) {
 			<div className="flex flex-col min-h-screen font-inter transition-all duration-200 bg-modern-light/[.4]">
 				<ThemeToggleButton />
 				<LanguageToggleButton />
-				<div className="flex flex-col flex-grow w-full justify-center justify-items-center items-center bg-gradient-to-r from-[rgba(108,150,241,0.55)] to-[rgba(78,129,238,0.56)] dark:from-[rgba(80,86,143,0.86)] dark:to-[rgba(44,91,151,0.79)] dark:text-white -mt-2 pb-40 sm:pb-20 lg:pb-0">
+				<div className="flex flex-col flex-grow w-full justify-center justify-items-center items-center bg-gradient-to-r from-[rgba(108,150,241,0.55)] to-[rgba(78,129,238,0.56)] dark:from-[rgba(80,86,143,0.86)] dark:to-[rgba(44,91,151,0.79)] dark:text-white -mt-2  pb-40">
 					{children}
 				</div>
 				<Footer />
