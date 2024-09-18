@@ -10,11 +10,21 @@ const Footer = () => {
     const [isHovered, setIsHovered] = useState(false);
     const [isAvatarLoaded, setIsAvatarLoaded] = useState(false);
     const [lastPageDeploy, setLastPageDeploy] = useState(null);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const userResponse = await fetch("https://api.github.com/users/mldxo");
+                if (!userResponse.ok) {
+                    const errorData = await userResponse.json();
+                    if (errorData.message.includes("API rate limit exceeded")) {
+                        setError("API rate limit exceeded. Please try again later.");
+                    } else {
+                        setError("Error fetching user data.");
+                    }
+                    return;
+                }
                 const userData = await userResponse.json();
                 const year = new Date(userData.created_at).getFullYear();
                 setCreatedYear(year);
@@ -27,6 +37,15 @@ const Footer = () => {
                 };
 
                 const deployResponse = await fetch("https://api.github.com/repos/mldxo/blog-app/deployments");
+                if (!deployResponse.ok) {
+                    const errorData = await deployResponse.json();
+                    if (errorData.message.includes("API rate limit exceeded")) {
+                        setError("API rate limit exceeded. Please try again later.");
+                    } else {
+                        setError("Error fetching deployment data.");
+                    }
+                    return;
+                }
                 const deployData = await deployResponse.json();
                 if (deployData.length > 0) {
                     const locale = i18n.language === "en" ? "en-GB" : "pl-PL";
@@ -39,6 +58,7 @@ const Footer = () => {
                 }
             } catch (error) {
                 console.error("Error fetching data:", error);
+                setError("An unexpected error occurred.");
             }
         };
         fetchData();
@@ -77,7 +97,7 @@ const Footer = () => {
                             &copy;
                         </p>
                         <p>
-                            {createdYear}-{new Date().getFullYear()} Miłosz Maculewicz - {t("footer.all_rights_reserved")}
+                            {createdYear ? `${createdYear}-${new Date().getFullYear()}` : new Date().getFullYear()} Miłosz Maculewicz - {t("footer.all_rights_reserved")}
                         </p>
                     </div>
                 </div>
@@ -85,9 +105,14 @@ const Footer = () => {
             <div
                 className="flex flex-col-reverse h-0 text-center w-full bg-transparent transition-all opacity-50 dark:text-slate-200">
                 <div className="flex flex-row mx-auto pb-4 cursor-normal select-none">
-                    <div
-                        className="hover:opacity-70 transition-all duration-300">
-                        {lastPageDeploy && <p>{t("footer.last_deploy")} {lastPageDeploy}</p>}
+                    <div className="hover:opacity-70 transition-all duration-300">
+                        {lastPageDeploy ? (
+                            <p>{t("footer.last_deploy")} {lastPageDeploy}</p>
+                        ) : error ? (
+                            <p>{error}</p>
+                        ) : (
+                            <p>{t("footer.error_message")}</p>
+                        )}
                     </div>
                 </div>
             </div>
