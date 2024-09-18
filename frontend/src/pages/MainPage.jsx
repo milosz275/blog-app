@@ -41,6 +41,70 @@ const MainPage = () => {
 		},
 	];
 
+	const recentPosts = [
+		{ title: "Understanding React Hooks", excerpt: "A guide to mastering React Hooks in modern development.", slug: "react-hooks" },
+		{ title: "Advanced JavaScript Techniques", excerpt: "Learn advanced JavaScript patterns and best practices.", slug: "javascript-techniques" },
+		{ title: "CSS Grid vs Flexbox", excerpt: "A comprehensive comparison between CSS Grid and Flexbox.", slug: "css-grid-vs-flexbox" },
+	];
+
+	const testimonials = [
+		{ user: "Jane Doe", feedback: "This platform has revolutionized how I learn and share coding knowledge." },
+		{ user: "John Smith", feedback: "The community here is so helpful, I’ve grown immensely as a developer." },
+		{ user: "Mary Johnson", feedback: "Amazing blog posts, always insightful and up-to-date!" },
+	];
+
+	const developers = [
+		{
+			name: "Alice Johnson",
+			avatar: "/blog-app/assets/developer1.jpg",
+			description: "Full-stack developer specializing in React and Node.js.",
+		},
+		{
+			name: "Bob Martin",
+			avatar: "/blog-app/assets/developer2.jpg",
+			description: "Python and Django expert with a passion for AI.",
+		},
+		{
+			name: "Catherine Lee",
+			avatar: "/blog-app/assets/developer3.jpg",
+			description: "Front-end developer with a knack for beautiful UI designs.",
+		},
+	];
+
+	const tags = [
+		{ name: "JavaScript", slug: "javascript" },
+		{ name: "React", slug: "react" },
+		{ name: "CSS", slug: "css" },
+		{ name: "Node.js", slug: "nodejs" },
+		{ name: "Python", slug: "python" },
+	];
+
+	const pollOptions = [
+		{ name: "JavaScript" },
+		{ name: "Python" },
+		{ name: "Ruby" },
+		{ name: "Java" },
+		{ name: "C++" },
+	];
+
+	const contributors = [
+		{
+			name: "David Green",
+			avatar: "/blog-app/assets/contributor1.jpg",
+			posts: 42,
+		},
+		{
+			name: "Laura Baker",
+			avatar: "/blog-app/assets/contributor2.jpg",
+			posts: 37,
+		},
+		{
+			name: "Michael Scott",
+			avatar: "/blog-app/assets/contributor3.jpg",
+			posts: 29,
+		},
+	];
+
 	useEffect(() => {
 		Store.addNotification({
 			title: t("main_page.notification.title"),
@@ -99,6 +163,92 @@ const MainPage = () => {
 							</div>
 						))}
 					</div>
+				</div>
+			</div>
+			<div className="flex flex-col w-full justify-center elements-center mx-auto pt-24 pb-16 bg-transparent backdrop-blur-3xl transition-all duration-300 ease-in-out transform text-center">
+				<div className="flex flex-col w-full max-w-6xl items-center justify-center mx-auto mt-24 mb-8">
+					<h1 className="text-3xl font-bold text-center mb-8 select-none">Recent Posts</h1>
+					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+						{recentPosts.map((post, index) => (
+							<div key={index} className="bg-gradient-to-bl from-slate-100/[.8] to-slate-200/[.8] dark:from-gray-800/[.8] dark:to-gray-900/[.8] transition-all duration-200 opacity-90 hover:opacity-100 p-4 rounded-lg shadow-md">
+								<h2 className="text-xl font-bold">{post.title}</h2>
+								<p className="mt-2 text-gray-600 dark:text-gray-400">{post.excerpt}</p>
+								<a href={`/posts/${post.slug}`} className="text-blue-500 dark:text-blue-400 mt-4 inline-block">Read More</a>
+							</div>
+						))}
+					</div>
+				</div>
+				<div className="flex flex-col w-full max-w-6xl items-center justify-center mx-auto mt-24 mb-8">
+					<h1 className="text-3xl font-bold text-center mb-8 select-none">Community Feedback</h1>
+					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+						{testimonials.map((testimonial, index) => (
+							<div key={index} className="bg-gradient-to-bl from-slate-100/[.8] to-slate-200/[.8] dark:from-gray-800/[.8] dark:to-gray-900/[.8] transition-all duration-200 opacity-90 hover:opacity-100 p-4 rounded-lg shadow-md">
+								<p className="text-lg font-semibold">{testimonial.user}</p>
+								<p className="mt-2 text-gray-600 dark:text-gray-400">{testimonial.feedback}</p>
+							</div>
+						))}
+					</div>
+				</div>
+				<div className="flex flex-col w-full max-w-6xl items-center justify-center mx-auto mt-24 mb-8">
+					<h1 className="text-3xl font-bold text-center mb-8 select-none">Featured Developers</h1>
+					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+						{developers.map((developer, index) => (
+							<div key={index} className="bg-gradient-to-bl from-slate-100/[.8] to-slate-200/[.8] dark:from-gray-800/[.8] dark:to-gray-900/[.8] transition-all duration-200 opacity-90 hover:opacity-100 p-4 rounded-lg shadow-md text-center">
+								<img src={developer.avatar} alt={developer.name} className="rounded-full w-24 h-24 mx-auto" />
+								<h2 className="mt-4 text-xl font-bold">{developer.name}</h2>
+								<p className="mt-2 text-gray-600 dark:text-gray-400">{developer.description}</p>
+							</div>
+						))}
+					</div>
+				</div>
+				<div className="flex flex-col w-full max-w-6xl items-center justify-center mx-auto mt-24 mb-8">
+					<h1 className="text-3xl font-bold text-center mb-8 select-none">Top Contributors</h1>
+					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+						{contributors.map((contributor, index) => (
+							<div key={index} className="bg-gradient-to-bl from-slate-100/[.8] to-slate-200/[.8] dark:from-gray-800/[.8] dark:to-gray-900/[.8] transition-all duration-200 opacity-90 hover:opacity-100 p-4 rounded-lg shadow-md text-center">
+								<img src={contributor.avatar} alt={contributor.name} className="rounded-full w-24 h-24 mx-auto" />
+								<h2 className="mt-4 text-xl font-bold">{contributor.name}</h2>
+								<p className="mt-2 text-gray-600 dark:text-gray-400">Contributed {contributor.posts} blog posts</p>
+							</div>
+						))}
+					</div>
+				</div>
+				<div className="flex flex-col w-full max-w-6xl items-center justify-center mx-auto mt-24 mb-8">
+					<h1 className="text-3xl font-bold text-center mb-8 select-none">Browse by Tags</h1>
+					<div className="flex flex-wrap gap-2 justify-center">
+						{tags.map((tag, index) => (
+							<a href={`/tags/${tag.slug}`} key={index} className="bg-gradient-to-bl from-slate-100/[.8] to-slate-200/[.8] dark:from-gray-800/[.8] dark:to-gray-900/[.8] transition-all duration-200 opacity-90 hover:opacity-100 px-4 py-2 rounded-lg">
+								{tag.name}
+							</a>
+						))}
+					</div>
+				</div>
+				<div className="flex flex-col w-full max-w-6xl items-center justify-center mx-auto mt-24 mb-8">
+					<h1 className="text-3xl font-bold text-center mb-8 select-none">Developer Poll</h1>
+					<div className="bg-gradient-to-bl from-slate-100/[.8] to-slate-200/[.8] dark:from-gray-800/[.8] dark:to-gray-900/[.8] transition-all duration-200 opacity-90 hover:opacity-100 p-4 rounded-lg shadow-md text-center">
+						<h2 className="text-xl font-semibold">Which programming language do you use the most?</h2>
+						<div className="mt-4">
+							{pollOptions.map((option, index) => (
+								<button key={index} className="bg-blue-500 hover:bg-blue-600 transition-all duration-200 text-white px-4 py-2 rounded-lg mr-2">{option.name}</button>
+							))}
+						</div>
+					</div>
+				</div>
+				<div className="flex flex-col w-full max-w-4xl items-center justify-center mx-auto mt-24 mb-8">
+					<h1 className="text-3xl font-bold text-center mb-8 select-none">Subscribe to our Newsletter</h1>
+					<form className="w-full max-w-lg mx-auto">
+						<input
+							type="email"
+							placeholder="Enter your email"
+							className="w-full p-2 mb-4 border border-gray-300 rounded-lg outline-none hover:outline-none cursor-text text-black"
+							readOnly={false}
+						/>
+						<button
+							type="submit"
+							className="bg-blue-600/[.8] hover:bg-blue-600 transition-all duration-200 text-white p-2 w-full rounded-lg">
+							Subscribe
+						</button>
+					</form>
 				</div>
 			</div>
 		</TemplatePage>
