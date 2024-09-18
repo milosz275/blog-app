@@ -33,6 +33,11 @@ Forum offers user registration and login with password, adjustable user profile,
 - [x] Dynamic user profile picture using base64 encoding
 - [x] Dynamic blog post miniature using base64 encoding
 - [x] Functional admin panel with image downloads
+- [ ] User profile modification
+- [ ] User email registration verification
+- [ ] User password reset
+- [ ] User password change
+- [ ] Language selection
 
 ## Technologies
 
