@@ -5,11 +5,14 @@ from rest_framework import serializers
 from drf_spectacular.utils import extend_schema_field
 from users.models import UserProfile
 
+
 class UserSerializer(serializers.ModelSerializer):
     """Serializer for User model used for registration"""
+
     class Meta:
         model = User
         fields = ["id", "username", "password"]
+
 
 class UserProfileLimitedSerializer(serializers.ModelSerializer):
     username = SerializerMethodField()
@@ -22,6 +25,7 @@ class UserProfileLimitedSerializer(serializers.ModelSerializer):
     def get_username(self, obj) -> str:
         if obj.user:
             return obj.user.username
+
 
 class UserProfileSerializer(serializers.ModelSerializer):
     username = SerializerMethodField()
@@ -41,6 +45,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
     def get_username(self, obj) -> str:
         if obj.user:
             return obj.user.username
+
 
 class UserProfileUpdateSerializer(serializers.ModelSerializer):
     class Meta:

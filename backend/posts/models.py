@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class BlogPost(models.Model):
     user = models.ForeignKey("users.UserProfile", on_delete=models.CASCADE)
     title = models.CharField(max_length=100)

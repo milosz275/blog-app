@@ -4,7 +4,11 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
 from django.shortcuts import redirect
-from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
+from drf_spectacular.views import (
+    SpectacularAPIView,
+    SpectacularRedocView,
+    SpectacularSwaggerView,
+)
 
 urlpatterns = [
     path("__debug__/", include(debug_toolbar.urls)),
@@ -20,6 +24,6 @@ urlpatterns = [
     path(
         "schema/redoc/", SpectacularRedocView.as_view(url_name="schema"), name="redoc"
     ),
-    path("favicon.ico", lambda _ : redirect("static/favicon.ico", permanent=True)),
-    path("", lambda _ : redirect("admin/", permanent=True)),
+    path("favicon.ico", lambda _: redirect("static/favicon.ico", permanent=True)),
+    path("", lambda _: redirect("admin/", permanent=True)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

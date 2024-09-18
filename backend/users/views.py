@@ -10,7 +10,12 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework_simplejwt.views import TokenObtainPairView
 from users.models import UserProfile
-from users.serializers import UserSerializer, UserProfileSerializer, UserProfileUpdateSerializer
+from users.serializers import (
+    UserSerializer,
+    UserProfileSerializer,
+    UserProfileUpdateSerializer,
+)
+
 
 def isEmailAddressValid(email):
     try:
@@ -18,20 +23,25 @@ def isEmailAddressValid(email):
         return True
     except ValidationError:
         return False
-    
+
+
 def isPasswordValid(password):
     try:
         validate_password(password)
         return True
     except:
         return False
-    
+
+
 class LoginView(TokenObtainPairView):
     def post(self, request, *args, **kwargs):
         username = request.data.get("username", "")
         if not isEmailAddressValid(username):
-            return Response({"detail": "Invalid email address."}, status=status.HTTP_400_BAD_REQUEST)
+            return Response(
+                {"detail": "Invalid email address."}, status=status.HTTP_400_BAD_REQUEST
+            )
         return super().post(request, *args, **kwargs)
+
 
 class RegisterView(CreateAPIView):
     serializer_class = UserSerializer
@@ -45,21 +55,24 @@ class RegisterView(CreateAPIView):
     def create(self, request):
         email = request.data.get("username")
         password = request.data.get("password")
-        
+
         if not isEmailAddressValid(email):
             return Response(
-                {"username":["Provided username is not an email."]}, status=status.HTTP_400_BAD_REQUEST
+                {"username": ["Provided username is not an email."]},
+                status=status.HTTP_400_BAD_REQUEST,
             )
-        
+
         if not isPasswordValid(password):
             return Response(
-                {"password":["Provided password is not valid."]}, status=status.HTTP_400_BAD_REQUEST
+                {"password": ["Provided password is not valid."]},
+                status=status.HTTP_400_BAD_REQUEST,
             )
-            
+
         super().create(request)
         return Response(
             {"message": "User created successfully"}, status=status.HTTP_201_CREATED
         )
+
 
 class UserProfileRetrieveByTokenView(APIView):
     permission_classes = [IsAuthenticated]
@@ -72,6 +85,7 @@ class UserProfileRetrieveByTokenView(APIView):
         serializer = self.serializer_class(profile)
         return Response(serializer.data)
 
+
 class UserProfileUpdateView(UpdateAPIView):
     permission_classes = [IsAuthenticated]
 
@@ -83,7 +97,7 @@ class UserProfileUpdateView(UpdateAPIView):
         if instance.user == self.request.user:
             instance.updated_at = datetime.datetime.now()
             instance.save()
-            
+
             super().update(request, *args, **kwargs)
             return Response(
                 {"detail": "Profile updated successfully."},

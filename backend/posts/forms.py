@@ -2,6 +2,7 @@ import base64
 from django import forms
 from .models import BlogPost
 
+
 class BlogPostAdminForm(forms.ModelForm):
     image_file = forms.FileField(required=False)
 
@@ -19,7 +20,7 @@ class BlogPostAdminForm(forms.ModelForm):
         if commit:
             instance.save()
         return instance
-    
+
     def get_image_url(self):
         if self.instance.image_data:
             return f"data:image/png;base64,{self.instance.image_data}"
