@@ -52,7 +52,8 @@
         "privacy_policy": "Polityka prywatności",
         "cookie_policy": "Ta strona używa plików cookie, aby zapewnić najlepsze doświadczenia na naszej stronie.",
         "cookie_consent": "Zgadzam się",
-        "last_deploy": "Ostatnie wdrożenie:"
+        "last_deploy": "Ostatnie wdrożenie:",
+        "error_message": "Nie można pobrać daty ostatniego wdrożenia."
     },
     "about": {
         "title": "O nas",
