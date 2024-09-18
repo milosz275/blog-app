@@ -52,7 +52,8 @@
         "privacy_policy": "Privacy Policy",
         "cookie_policy": "This website uses cookies to ensure you get the best experience on our website.",
         "cookie_consent": "I agree",
-        "last_deploy": "Last deploy:"
+        "last_deploy": "Last deploy:",
+        "error_message": "Error loading last deploy date."
     },
     "about": {
         "title": "About",
