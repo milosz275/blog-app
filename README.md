@@ -1,8 +1,9 @@
 # Blog App
 
+[![Django CI](https://github.com/mldxo/blog-app/actions/workflows/django.yml/badge.svg)](https://github.com/mldxo/blog-app/actions/workflows/django.yml)
+[![GitHub Pages](https://github.com/mldxo/blog-app/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/mldxo/blog-app/actions/workflows/pages/pages-build-deployment)
 [![GitHub Tag](https://img.shields.io/github/v/tag/mldxo/blog-app)](https://github.com/mldxo/blog-app/)
 [![License](https://img.shields.io/github/license/mldxo/blog-app)](LICENSE)
-[![GitHub Pages](https://github.com/mldxo/blog-app/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/mldxo/blog-app/actions/workflows/pages/pages-build-deployment)
 
 Fullstack [blog](https://github.com/mldxo/blog-app) application with frontend and backend components. The frontend is built with React and the backend is built with Node.js and Express. The frontend and backend are connected with a RESTful API. The Application can be set to either act like personal blog or platform for people to create their blog postings.
 
@@ -66,6 +67,10 @@ cd blog-app/backend
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
+python manage.py makemigrations users posts
+touch .env
+echo "SECRET_KEY=your_secret_key" >> .env
+echo "DEBUG=True" >> .env
 python manage.py migrate
 python manage.py runserver
 ```
