@@ -1,6 +1,7 @@
 # Blog App
 
 [![Django CI](https://github.com/mldxo/blog-app/actions/workflows/django.yml/badge.svg)](https://github.com/mldxo/blog-app/actions/workflows/django.yml)
+[![CodeQL](https://github.com/mldxo/blog-app/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/mldxo/blog-app/actions/workflows/github-code-scanning/codeql)
 [![GitHub Pages](https://github.com/mldxo/blog-app/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/mldxo/blog-app/actions/workflows/pages/pages-build-deployment)
 [![GitHub Tag](https://img.shields.io/github/v/tag/mldxo/blog-app)](https://github.com/mldxo/blog-app/)
 [![License](https://img.shields.io/github/license/mldxo/blog-app)](LICENSE)
