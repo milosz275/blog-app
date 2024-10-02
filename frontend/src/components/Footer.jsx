@@ -66,7 +66,7 @@ const Footer = () => {
 
     return (
         <div
-            className="flex flex-col-reverse h-0 text-center w-full bg-transparent transition-all opacity-50 dark:text-slate-200">
+            className="flex flex-col-reverse h-0 text-center w-full bg-transparent transition-all opacity-75">
             <div className="flex flex-row mx-auto pb-4 cursor-pointer select-none">
                 <div
                     className="hover:opacity-70 transition-all duration-300 hidden sm:block"
@@ -103,7 +103,7 @@ const Footer = () => {
                 </div>
             </div>
             <div
-                className="flex flex-col-reverse h-0 text-center w-full bg-transparent transition-all opacity-50 dark:text-slate-200">
+                className="flex flex-col-reverse h-0 text-center w-full bg-transparent transition-all opacity-75">
                 <div className="flex flex-row mx-auto pb-4 cursor-normal select-none">
                     <div className="hover:opacity-70 transition-all duration-300">
                         {lastPageDeploy ? (
