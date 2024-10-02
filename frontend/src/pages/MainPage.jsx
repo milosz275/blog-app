@@ -193,39 +193,51 @@ const MainPage = () => {
 			<div className="flex flex-col w-full justify-center elements-center mx-auto pt-24 pb-16 bg-transparent backdrop-blur-3xl transition-all duration-300 ease-in-out transform text-center">
 				<div className="flex flex-col w-full max-w-6xl items-center justify-center mx-auto mt-24 mb-8">
 					<h1 className="text-3xl font-bold text-center mb-8 select-none px-2 hover:scale-105 transition duration-200">{t("main_page.recent_posts")}</h1>
-					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-0">
-						{recentPosts.map((post, index) => (
-							<div key={index} className="bg-gradient-to-bl from-slate-100/[.8] to-slate-200/[.8] dark:from-gray-800/[.8] dark:to-gray-900/[.8] transition-all duration-200 opacity-90 hover:opacity-100 p-4 rounded-lg shadow-md mx-4 my-2 sm:my-4">
-								<h2 className="text-xl font-bold">{post.title}</h2>
-								<p className="mt-2 text-gray-600 dark:text-gray-400">{post.description}</p>
-								<a href={`/posts/${post.slug}`} className="text-blue-500 dark:text-blue-400 mt-4 inline-block">Read More</a>
-							</div>
-						))}
-					</div>
+					{recentPosts.length > 0 ? (
+						<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-0">
+							{recentPosts.map((post, index) => (
+								<div key={index} className="bg-gradient-to-bl from-slate-100/[.8] to-slate-200/[.8] dark:from-gray-800/[.8] dark:to-gray-900/[.8] transition-all duration-200 opacity-90 hover:opacity-100 p-4 rounded-lg shadow-md mx-4 my-2 sm:my-4">
+									<h2 className="text-xl font-bold">{post.title}</h2>
+									<p className="mt-2 text-gray-600 dark:text-gray-400">{post.description}</p>
+									<a href={`/blog-app/posts/${post.slug}`} className="text-blue-500 dark:text-blue-400 mt-4 inline-block">Read More</a>
+								</div>
+							))}
+						</div>
+					) : (
+						<p className="text-xl font-semibold text-gray-600 dark:text-gray-400 mt-4">{t("main_page.no_posts")}</p>
+					)}
 				</div>
 				<div className="flex flex-col w-full max-w-6xl items-center justify-center mx-auto mt-24 mb-8">
 					<h1 className="text-3xl font-bold text-center mb-8 select-none px-2 hover:scale-105 transition duration-200">{t("main_page.trending_posts")}</h1>
-					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-0">
-						{trendingPosts.map((post, index) => (
-							<div key={index} className="bg-gradient-to-bl from-slate-100/[.8] to-slate-200/[.8] dark:from-gray-800/[.8] dark:to-gray-900/[.8] transition-all duration-200 opacity-90 hover:opacity-100 p-4 rounded-lg shadow-md mx-4 my-2 sm:my-4">
-								<h2 className="text-xl font-bold">{post.title}</h2>
-								<p className="mt-2 text-gray-600 dark:text-gray-400">{post.description}</p>
-								<a href={`/posts/${post.slug}`} className="text-blue-500 dark:text-blue-400 mt-4 inline-block">Read More</a>
-							</div>
-						))}
-					</div>
+					{trendingPosts.length > 0 ? (
+						<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-0">
+							{trendingPosts.map((post, index) => (
+								<div key={index} className="bg-gradient-to-bl from-slate-100/[.8] to-slate-200/[.8] dark:from-gray-800/[.8] dark:to-gray-900/[.8] transition-all duration-200 opacity-90 hover:opacity-100 p-4 rounded-lg shadow-md mx-4 my-2 sm:my-4">
+									<h2 className="text-xl font-bold">{post.title}</h2>
+									<p className="mt-2 text-gray-600 dark:text-gray-400">{post.description}</p>
+									<a href={`/blog-app/posts/${post.slug}`} className="text-blue-500 dark:text-blue-400 mt-4 inline-block">Read More</a>
+								</div>
+							))}
+						</div>
+					) : (
+						<p className="text-xl font-semibold text-gray-600 dark:text-gray-400 mt-4">{t("main_page.no_posts")}</p>
+					)}
 				</div>
 				<div className="flex flex-col w-full max-w-6xl items-center justify-center mx-auto mt-24 mb-8">
 					<h1 className="text-3xl font-bold text-center mb-8 select-none px-2 hover:scale-105 transition duration-200">{t("main_page.popular_posts")}</h1>
-					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-0">
-						{popularPosts.map((post, index) => (
-							<div key={index} className="bg-gradient-to-bl from-slate-100/[.8] to-slate-200/[.8] dark:from-gray-800/[.8] dark:to-gray-900/[.8] transition-all duration-200 opacity-90 hover:opacity-100 p-4 rounded-lg shadow-md mx-4 my-2 sm:my-4">
-								<h2 className="text-xl font-bold">{post.title}</h2>
-								<p className="mt-2 text-gray-600 dark:text-gray-400">{post.description}</p>
-								<a href={`/posts/${post.slug}`} className="text-blue-500 dark:text-blue-400 mt-4 inline-block">Read More</a>
-							</div>
-						))}
-					</div>
+					{popularPosts.length > 0 ? (
+						<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-0">
+							{popularPosts.map((post, index) => (
+								<div key={index} className="bg-gradient-to-bl from-slate-100/[.8] to-slate-200/[.8] dark:from-gray-800/[.8] dark:to-gray-900/[.8] transition-all duration-200 opacity-90 hover:opacity-100 p-4 rounded-lg shadow-md mx-4 my-2 sm:my-4">
+									<h2 className="text-xl font-bold">{post.title}</h2>
+									<p className="mt-2 text-gray-600 dark:text-gray-400">{post.description}</p>
+									<a href={`/blog-app/posts/${post.slug}`} className="text-blue-500 dark:text-blue-400 mt-4 inline-block">Read More</a>
+								</div>
+							))}
+						</div>
+					) : (
+						<p className="text-xl font-semibold text-gray-600 dark:text-gray-400 mt-4">{t("main_page.no_posts")}</p>
+					)}
 				</div>
 				<div className="flex flex-col w-full max-w-6xl items-center justify-center mx-auto mt-24 mb-8">
 					<h1 className="text-3xl font-bold text-center mb-8 select-none px-2 hover:scale-105 transition duration-200">{t("main_page.community_feedback")}</h1>
