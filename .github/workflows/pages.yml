@@ -34,7 +34,9 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Deploy to GitHub Pages
-      run: npm run deploy -- -m "Deploy React app to GitHub Pages"
+      run: |
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+        npm run deploy -- -m "Deploy React app to GitHub Pages"
       working-directory: ./frontend
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
