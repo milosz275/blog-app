@@ -9,10 +9,9 @@ venv/
 *.pyd
 
 # Django
-# db.sqlite3
-# migrations/
-# media/
-# static/
+db.sqlite3
+media/
+static/
 local_settings.py
 .env
 
