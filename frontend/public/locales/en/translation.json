@@ -36,7 +36,33 @@
         "notification": {
             "title": "Welcome to the Blog!",
             "message": "This is a customizable blog app for developers."
-        }
+        },
+        "no_posts": "No posts",
+        "view_all_posts": "View All Posts",
+        "recent_posts": "Recent Posts",
+        "trending_posts": "Trending Posts",
+        "popular_posts": "Popular Posts",
+        "community_feedback": "Community Feedback",
+        "featured_developers": "Featured Developers",
+        "top_contributors": "Top Contributors",
+        "browse_by_tags": "Browse by Tags",
+        "developer_poll": {
+            "title": "Developer Poll",
+            "question": "Which programming language do you use the most?",
+            "options": {
+                "option_1": "JavaScript",
+                "option_2": "Python",
+                "option_3": "Java",
+                "option_4": "Ruby",
+                "option_5": "Go",
+                "option_6": "C++",
+                "option_7": "Rust"
+            },
+            "results": "Results"
+        },
+        "subscribe_to_newsletter": "Subscribe to newsletter",
+        "newsletter_enter_email": "Enter your email address",
+        "subscribe": "Subscribe"
     },
     "header": {
         "home": "Home",

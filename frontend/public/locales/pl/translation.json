@@ -36,7 +36,33 @@
         "notification": {
             "title": "Witamy na blogu!",
             "message": "To konfigurowalna aplikacja blogowa dla programistów."
-        }
+        },
+        "no_posts": "Brak postów",
+        "view_all_posts": "Zobacz wszystkie posty",
+        "recent_posts": "Ostatnie posty",
+        "trending_posts": "Wzrastające posty",
+        "popular_posts": "Popularne posty",
+        "community_feedback": "Opinie społeczności",
+        "featured_developers": "Polecani programiści",
+        "top_contributors": "Najlepsi współpracownicy",
+        "browse_by_tags": "Przeglądaj według tagów",
+        "developer_poll": {
+            "title": "Ankieta dla programistów",
+            "question": "Którego języka programowania używasz najczęściej?",
+            "options": {
+                "option_1": "JavaScript",
+                "option_2": "Python",
+                "option_3": "Java",
+                "option_4": "Ruby",
+                "option_5": "Go",
+                "option_6": "C++",
+                "option_7": "Rust"
+            },
+            "results": "Wyniki"
+        },
+        "subscribe_to_newsletter": "Zapisz się na newsletter",
+        "newsletter_enter_email": "Wpisz swój adres email",
+        "subscribe": "Zapisz się"
     },
     "header": {
         "home": "Strona główna",
