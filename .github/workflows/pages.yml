@@ -2,41 +2,19 @@ name: GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
-
+    
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
+    - name: Build and Deploy React app to GitHub Pages
+      uses: omkartapale/react-deployment-gh-pages@v1.0.0
       with:
-        node-version: '16'
-
-    - name: Install dependencies
-      run: npm install
-      working-directory: ./frontend
-
-    - name: Build the React app
-      run: npm run build
-      working-directory: ./frontend
-
-    - name: Configure Git
-      run: |
-        git config --global user.email "miloszmaculewicz@gmail.com"
-        git config --global user.name "mldxo"
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Deploy to GitHub Pages
-      run: |
-        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-        npm run deploy -- -m "Deploy React app to GitHub Pages"
-      working-directory: ./frontend
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        working-directory: /frontend
