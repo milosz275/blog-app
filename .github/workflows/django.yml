@@ -29,10 +29,10 @@ jobs:
     - name: Setup
       run: |
         cd backend
-        python manage.py makemigrations users posts
         touch .env
         echo "SECRET_KEY=your_secret_key" >> .env
         echo "DEBUG=True" >> .env
+        python manage.py makemigrations users posts
         python manage.py migrate
     - name: Run Tests
       run: |
