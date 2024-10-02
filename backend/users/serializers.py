@@ -1,4 +1,5 @@
 import datetime
+from typing import Union
 from django.contrib.auth.models import User
 from rest_framework.fields import SerializerMethodField
 from rest_framework import serializers
@@ -22,7 +23,7 @@ class UserProfileLimitedSerializer(serializers.ModelSerializer):
         fields = ["id", "username"]
 
     @extend_schema_field(UserSerializer)
-    def get_username(self, obj) -> str | None:
+    def get_username(self, obj) -> Union[str, None]:
         if obj.user:
             return obj.user.username
         else:
@@ -44,7 +45,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
         ]
 
     @extend_schema_field(UserSerializer)
-    def get_username(self, obj) -> str | None:
+    def get_username(self, obj) -> Union[str, None]:
         if obj.user:
             return obj.user.username
         else:
