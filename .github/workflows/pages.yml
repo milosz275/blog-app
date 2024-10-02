@@ -50,7 +50,11 @@ jobs:
         git config --global user.name $user_name
         git config --global user.email $user_email
         git remote set-url origin https://${github_token}@github.com/${repository}
-        git checkout gh-pages
+        if git show-ref --quiet refs/heads/gh-pages; then
+          git checkout gh-pages
+        else
+          git checkout --orphan gh-pages
+        fi
         git rm -rf .
         cp -r ./frontend/dist/* .
         git add .
