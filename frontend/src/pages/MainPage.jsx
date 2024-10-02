@@ -1,8 +1,9 @@
-// eslint-disable-next-line no-unused-vars
+
 import React, { useEffect } from "react";
 import TemplatePage from "../pages/TemplatePage";
 import { useTranslation } from "react-i18next";
 import { Store } from "react-notifications-component";
+import { user } from "../icons";
 import "react-notifications-component/dist/theme.css";
 
 const MainPage = () => {
@@ -56,17 +57,17 @@ const MainPage = () => {
 	const developers = [
 		{
 			name: "Alice Johnson",
-			avatar: "/blog-app/assets/developer1.jpg",
+			avatar: "",
 			description: "Full-stack developer specializing in React and Node.js.",
 		},
 		{
 			name: "Bob Martin",
-			avatar: "/blog-app/assets/developer2.jpg",
+			avatar: "",
 			description: "Python and Django expert with a passion for AI.",
 		},
 		{
 			name: "Catherine Lee",
-			avatar: "/blog-app/assets/developer3.jpg",
+			avatar: "",
 			description: "Front-end developer with a knack for beautiful UI designs.",
 		},
 	];
@@ -90,17 +91,17 @@ const MainPage = () => {
 	const contributors = [
 		{
 			name: "David Green",
-			avatar: "/blog-app/assets/contributor1.jpg",
+			avatar: "",
 			posts: 42,
 		},
 		{
 			name: "Laura Baker",
-			avatar: "/blog-app/assets/contributor2.jpg",
+			avatar: "",
 			posts: 37,
 		},
 		{
 			name: "Michael Scott",
-			avatar: "/blog-app/assets/contributor3.jpg",
+			avatar: "",
 			posts: 29,
 		},
 	];
@@ -194,7 +195,17 @@ const MainPage = () => {
 					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-0">
 						{developers.map((developer, index) => (
 							<div key={index} className="bg-gradient-to-bl from-slate-100/[.8] to-slate-200/[.8] dark:from-gray-800/[.8] dark:to-gray-900/[.8] transition-all duration-200 opacity-90 hover:opacity-100 p-4 rounded-lg shadow-md text-center mx-4 my-2 sm:my-4">
-								<img src={developer.avatar} alt={developer.name} className="rounded-full w-24 h-24 mx-auto" />
+								{developer.avatar ? (
+									<img
+										src={developer.avatar}
+										alt={developer.name}
+										className="rounded-full w-24 h-24 mx-auto"
+									/>
+								) : (
+									<div className="rounded-full w-24 h-24 mx-auto flex items-center justify-center">
+										{React.cloneElement(user, { className: "h-16 w-16 cursor-pointer" })}
+									</div>
+								)}
 								<h2 className="mt-4 text-xl font-bold">{developer.name}</h2>
 								<p className="mt-2 text-gray-600 dark:text-gray-400">{developer.description}</p>
 							</div>
@@ -206,7 +217,17 @@ const MainPage = () => {
 					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-0">
 						{contributors.map((contributor, index) => (
 							<div key={index} className="bg-gradient-to-bl from-slate-100/[.8] to-slate-200/[.8] dark:from-gray-800/[.8] dark:to-gray-900/[.8] transition-all duration-200 opacity-90 hover:opacity-100 p-4 rounded-lg shadow-md text-center mx-4 my-2 sm:my-4">
-								<img src={contributor.avatar} alt={contributor.name} className="rounded-full w-24 h-24 mx-auto" />
+								{contributor.avatar ? (
+									<img
+										src={contributor.avatar}
+										alt={contributor.name}
+										className="rounded-full w-24 h-24 mx-auto"
+									/>
+								) : (
+									<div className="rounded-full w-24 h-24 mx-auto flex items-center justify-center">
+										{React.cloneElement(user, { className: "h-16 w-16 cursor-pointer" })}
+									</div>
+								)}
 								<h2 className="mt-4 text-xl font-bold">{contributor.name}</h2>
 								<p className="mt-2 text-gray-600 dark:text-gray-400">Contributed {contributor.posts} blog posts</p>
 							</div>
