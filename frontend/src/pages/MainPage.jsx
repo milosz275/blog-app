@@ -1,13 +1,18 @@
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import TemplatePage from "../pages/TemplatePage";
+import axios from "axios";
 import { useTranslation } from "react-i18next";
 import { Store } from "react-notifications-component";
 import { user } from "../icons";
 import "react-notifications-component/dist/theme.css";
+import { API_POSTS_POPULAR_URL, API_POSTS_RECENT_URL, API_POSTS_TRENDING_URL } from "../urls";
 
 const MainPage = () => {
 	const { t } = useTranslation();
+	const [recentPosts, setRecentPosts] = useState([]);
+	const [trendingPosts, setTrendingPosts] = useState([]);
+	const [popularPosts, setPopularPosts] = useState([]);
 
 	const features = [
 		{
@@ -42,12 +47,6 @@ const MainPage = () => {
 		},
 	];
 
-	const recentPosts = [
-		{ title: "Understanding React Hooks", excerpt: "A guide to mastering React Hooks in modern development.", slug: "react-hooks" },
-		{ title: "Advanced JavaScript Techniques", excerpt: "Learn advanced JavaScript patterns and best practices.", slug: "javascript-techniques" },
-		{ title: "CSS Grid vs Flexbox", excerpt: "A comprehensive comparison between CSS Grid and Flexbox.", slug: "css-grid-vs-flexbox" },
-	];
-
 	const testimonials = [
 		{ user: "Jane Doe", feedback: "This platform has revolutionized how I learn and share coding knowledge." },
 		{ user: "John Smith", feedback: "The community here is so helpful, I’ve grown immensely as a developer." },
@@ -78,14 +77,6 @@ const MainPage = () => {
 		{ name: "CSS", slug: "css" },
 		{ name: "Node.js", slug: "nodejs" },
 		{ name: "Python", slug: "python" },
-	];
-
-	const pollOptions = [
-		{ name: "JavaScript" },
-		{ name: "Python" },
-		{ name: "Ruby" },
-		{ name: "Java" },
-		{ name: "C++" },
 	];
 
 	const contributors = [
@@ -121,6 +112,39 @@ const MainPage = () => {
 			},
 		});
 	}, [t]);
+
+	useEffect(() => {
+		const fetchRecentPosts = async () => {
+			try {
+				const response = await axios.get(API_POSTS_RECENT_URL);
+				setRecentPosts(response.data);
+			} catch (error) {
+				console.error('Error fetching recent posts:', error);
+			}
+		};
+
+		const fetchTrendingPosts = async () => {
+			try {
+				const response = await axios.get(API_POSTS_TRENDING_URL);
+				setTrendingPosts(response.data);
+			} catch (error) {
+				console.error('Error fetching trending posts:', error);
+			}
+		};
+
+		const fetchPopularPosts = async () => {
+			try {
+				const response = await axios.get(API_POSTS_POPULAR_URL);
+				setPopularPosts(response.data);
+			} catch (error) {
+				console.error('Error fetching popular posts:', error);
+			}
+		};
+
+		fetchRecentPosts();
+		fetchTrendingPosts();
+		fetchPopularPosts();
+	}, []);
 
 	return (
 		<TemplatePage>
@@ -168,19 +192,43 @@ const MainPage = () => {
 			</div>
 			<div className="flex flex-col w-full justify-center elements-center mx-auto pt-24 pb-16 bg-transparent backdrop-blur-3xl transition-all duration-300 ease-in-out transform text-center">
 				<div className="flex flex-col w-full max-w-6xl items-center justify-center mx-auto mt-24 mb-8">
-					<h1 className="text-3xl font-bold text-center mb-8 select-none px-2">Recent Posts</h1>
+					<h1 className="text-3xl font-bold text-center mb-8 select-none px-2 hover:scale-105 transition duration-200">{t("main_page.recent_posts")}</h1>
 					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-0">
 						{recentPosts.map((post, index) => (
 							<div key={index} className="bg-gradient-to-bl from-slate-100/[.8] to-slate-200/[.8] dark:from-gray-800/[.8] dark:to-gray-900/[.8] transition-all duration-200 opacity-90 hover:opacity-100 p-4 rounded-lg shadow-md mx-4 my-2 sm:my-4">
 								<h2 className="text-xl font-bold">{post.title}</h2>
-								<p className="mt-2 text-gray-600 dark:text-gray-400">{post.excerpt}</p>
+								<p className="mt-2 text-gray-600 dark:text-gray-400">{post.description}</p>
 								<a href={`/posts/${post.slug}`} className="text-blue-500 dark:text-blue-400 mt-4 inline-block">Read More</a>
 							</div>
 						))}
 					</div>
 				</div>
 				<div className="flex flex-col w-full max-w-6xl items-center justify-center mx-auto mt-24 mb-8">
-					<h1 className="text-3xl font-bold text-center mb-8 select-none px-2">Community Feedback</h1>
+					<h1 className="text-3xl font-bold text-center mb-8 select-none px-2 hover:scale-105 transition duration-200">{t("main_page.trending_posts")}</h1>
+					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-0">
+						{trendingPosts.map((post, index) => (
+							<div key={index} className="bg-gradient-to-bl from-slate-100/[.8] to-slate-200/[.8] dark:from-gray-800/[.8] dark:to-gray-900/[.8] transition-all duration-200 opacity-90 hover:opacity-100 p-4 rounded-lg shadow-md mx-4 my-2 sm:my-4">
+								<h2 className="text-xl font-bold">{post.title}</h2>
+								<p className="mt-2 text-gray-600 dark:text-gray-400">{post.description}</p>
+								<a href={`/posts/${post.slug}`} className="text-blue-500 dark:text-blue-400 mt-4 inline-block">Read More</a>
+							</div>
+						))}
+					</div>
+				</div>
+				<div className="flex flex-col w-full max-w-6xl items-center justify-center mx-auto mt-24 mb-8">
+					<h1 className="text-3xl font-bold text-center mb-8 select-none px-2 hover:scale-105 transition duration-200">{t("main_page.popular_posts")}</h1>
+					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-0">
+						{popularPosts.map((post, index) => (
+							<div key={index} className="bg-gradient-to-bl from-slate-100/[.8] to-slate-200/[.8] dark:from-gray-800/[.8] dark:to-gray-900/[.8] transition-all duration-200 opacity-90 hover:opacity-100 p-4 rounded-lg shadow-md mx-4 my-2 sm:my-4">
+								<h2 className="text-xl font-bold">{post.title}</h2>
+								<p className="mt-2 text-gray-600 dark:text-gray-400">{post.description}</p>
+								<a href={`/posts/${post.slug}`} className="text-blue-500 dark:text-blue-400 mt-4 inline-block">Read More</a>
+							</div>
+						))}
+					</div>
+				</div>
+				<div className="flex flex-col w-full max-w-6xl items-center justify-center mx-auto mt-24 mb-8">
+					<h1 className="text-3xl font-bold text-center mb-8 select-none px-2 hover:scale-105 transition duration-200">{t("main_page.community_feedback")}</h1>
 					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-0">
 						{testimonials.map((testimonial, index) => (
 							<div key={index} className="bg-gradient-to-bl from-slate-100/[.8] to-slate-200/[.8] dark:from-gray-800/[.8] dark:to-gray-900/[.8] transition-all duration-200 opacity-90 hover:opacity-100 p-4 rounded-lg shadow-md mx-4 my-2 sm:my-4">
@@ -191,7 +239,7 @@ const MainPage = () => {
 					</div>
 				</div>
 				<div className="flex flex-col w-full max-w-6xl items-center justify-center mx-auto mt-24 mb-8">
-					<h1 className="text-3xl font-bold text-center mb-8 select-none px-2">Featured Developers</h1>
+					<h1 className="text-3xl font-bold text-center mb-8 select-none px-2 hover:scale-105 transition duration-200">{t("main_page.featured_developers")}</h1>
 					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-0">
 						{developers.map((developer, index) => (
 							<div key={index} className="bg-gradient-to-bl from-slate-100/[.8] to-slate-200/[.8] dark:from-gray-800/[.8] dark:to-gray-900/[.8] transition-all duration-200 opacity-90 hover:opacity-100 p-4 rounded-lg shadow-md text-center mx-4 my-2 sm:my-4">
@@ -213,7 +261,7 @@ const MainPage = () => {
 					</div>
 				</div>
 				<div className="flex flex-col w-full max-w-6xl items-center justify-center mx-auto mt-24 mb-8">
-					<h1 className="text-3xl font-bold text-center mb-8 select-none px-2">Top Contributors</h1>
+					<h1 className="text-3xl font-bold text-center mb-8 select-none px-2 hover:scale-105 transition duration-200">{t("main_page.top_contributors")}</h1>
 					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-0">
 						{contributors.map((contributor, index) => (
 							<div key={index} className="bg-gradient-to-bl from-slate-100/[.8] to-slate-200/[.8] dark:from-gray-800/[.8] dark:to-gray-900/[.8] transition-all duration-200 opacity-90 hover:opacity-100 p-4 rounded-lg shadow-md text-center mx-4 my-2 sm:my-4">
@@ -235,39 +283,49 @@ const MainPage = () => {
 					</div>
 				</div>
 				<div className="flex flex-col w-full max-w-6xl items-center justify-center mx-auto mt-24 mb-8">
-					<h1 className="text-3xl font-bold text-center mb-8 select-none px-2">Browse by Tags</h1>
+					<h1 className="text-3xl font-bold text-center mb-8 select-none px-2 hover:scale-105 transition duration-200">{t("main_page.browse_by_tags")}</h1>
 					<div className="flex flex-wrap gap-1 justify-center">
 						{tags.map((tag, index) => (
-							<a href={`/tags/${tag.slug}`} key={index} className="bg-gradient-to-bl from-slate-100/[.8] to-slate-200/[.8] dark:from-gray-800/[.8] dark:to-gray-900/[.8] transition-all duration-200 opacity-90 hover:opacity-100 px-4 py-2 rounded-lg  mx-2 my-1 sm:my-2">
+							<a href={`/blog-app/tags/${tag.slug}`} key={index} className="bg-gradient-to-bl from-slate-100/[.8] to-slate-200/[.8] dark:from-gray-800/[.8] dark:to-gray-900/[.8] transition-all duration-200 opacity-90 hover:opacity-100 px-4 py-2 rounded-lg  mx-2 my-1 sm:my-2">
 								{tag.name}
 							</a>
 						))}
 					</div>
 				</div>
 				<div className="flex flex-col w-full max-w-6xl items-center justify-center mx-auto mt-24 mb-8">
-					<h1 className="text-3xl font-bold text-center mb-8 select-none px-2">Developer Poll</h1>
+					<h1 className="text-3xl font-bold text-center mb-8 select-none px-2 hover:scale-105 transition duration-200">{t("main_page.developer_poll.title")}</h1>
 					<div className="bg-gradient-to-bl from-slate-100/[.8] to-slate-200/[.8] dark:from-gray-800/[.8] dark:to-gray-900/[.8] transition-all duration-200 opacity-90 hover:opacity-100 p-4 rounded-lg shadow-md text-center mx-4 my-2 sm:my-4">
-						<h2 className="text-xl font-semibold">Which programming language do you use the most?</h2>
+						<h2 className="text-xl font-semibold">{t("main_page.developer_poll.question")}</h2>
 						<div className="mt-4">
-							{pollOptions.map((option, index) => (
-								<button key={index} className="bg-blue-500 hover:bg-blue-600 transition-all duration-200 text-white px-4 py-2 rounded-lg mx-2 my-2">{option.name}</button>
+							{[
+								t("main_page.developer_poll.options.option_1"),
+								t("main_page.developer_poll.options.option_2"),
+								t("main_page.developer_poll.options.option_3"),
+								t("main_page.developer_poll.options.option_4"),
+								t("main_page.developer_poll.options.option_5"),
+								t("main_page.developer_poll.options.option_6"),
+								t("main_page.developer_poll.options.option_7"),
+							].map((option, index) => (
+								<button key={index} className="bg-blue-500 hover:bg-blue-600 transition-all duration-200 text-white px-4 py-2 rounded-lg mx-2 my-2">
+									{option}
+								</button>
 							))}
 						</div>
 					</div>
 				</div>
 				<div className="flex flex-col w-full max-w-4xl items-center justify-center mx-auto mt-24 mb-8">
-					<h1 className="text-3xl font-bold text-center mb-8 select-none px-2">Subscribe to our Newsletter</h1>
+					<h1 className="text-3xl font-bold text-center mb-8 select-none px-2 hover:scale-105 transition duration-200">{t("main_page.subscribe_to_newsletter")}</h1>
 					<form className="w-full max-w-lg mx-auto bg-transparent px-2">
 						<input
 							type="email"
-							placeholder="Enter your email"
+							placeholder={t("main_page.newsletter_enter_email")}
 							className="w-full p-2 mb-4 text-black dark:text-white bg-gradient-to-bl from-slate-100/[.8] to-slate-200/[.8] dark:from-gray-900/[.85] dark:to-gray-950/[.85] transition-all duration-200 opacity-90 hover:opacity-100 rounded-lg outline-none hover:outline-none cursor-text"
 							readOnly={false}
 						/>
 						<button
 							type="submit"
 							className="bg-blue-600/[.8] hover:bg-blue-600 transition-all duration-200 text-white p-2 w-full rounded-lg">
-							Subscribe
+							{t("main_page.subscribe")}
 						</button>
 					</form>
 				</div>
