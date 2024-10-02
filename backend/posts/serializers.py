@@ -3,6 +3,9 @@ from posts.models import BlogPost
 
 
 class BlogPostSerializer(serializers.ModelSerializer):
+    likes_count = serializers.SerializerMethodField()
+    comments_count = serializers.SerializerMethodField()
+
     class Meta:
         model = BlogPost
         fields = [
@@ -12,10 +15,21 @@ class BlogPostSerializer(serializers.ModelSerializer):
             "image_data",
             "updated_at",
             "created_at",
+            "likes_count",
+            "comments_count",
         ]
+
+    def get_likes_count(self, obj):
+        return obj.likes.count()
+
+    def get_comments_count(self, obj):
+        return obj.comments.count()
 
 
 class BlogPostDetailSerializer(serializers.ModelSerializer):
+    likes_count = serializers.SerializerMethodField()
+    comments_count = serializers.SerializerMethodField()
+
     class Meta:
         model = BlogPost
         fields = [
@@ -27,6 +41,12 @@ class BlogPostDetailSerializer(serializers.ModelSerializer):
             "updated_at",
             "created_at",
         ]
+
+    def get_likes_count(self, obj):
+        return obj.likes.count()
+
+    def get_comments_count(self, obj):
+        return obj.comments.count()
 
 
 class BlogPostUpdateSerializer(serializers.ModelSerializer):
