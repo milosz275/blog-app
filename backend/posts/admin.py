@@ -21,8 +21,8 @@ class BlogPostInline(admin.StackedInline):
     readonly_fields = ["image_file", "image_tag", "download_image"]
     exclude = ["image_data"]
 
-    def has_add_permission(self, request, obj):
-        return False
+    # def has_add_permission(self, request, obj):
+    #     return False
 
     def image_file(self, obj):
         return mark_safe(f'<input type="file" name="image_file" accept="image/png" />')
@@ -80,8 +80,8 @@ class BlogPostAdmin(admin.ModelAdmin):
         form.base_fields["user"].widget.can_change_related = False
         return form
 
-    def has_add_permission(self, request):
-        return False
+    # def has_add_permission(self, request):
+    #     return False
 
     def image_tag(self, obj):
         if obj.image_data:
