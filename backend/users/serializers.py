@@ -22,9 +22,11 @@ class UserProfileLimitedSerializer(serializers.ModelSerializer):
         fields = ["id", "username"]
 
     @extend_schema_field(UserSerializer)
-    def get_username(self, obj) -> str:
+    def get_username(self, obj) -> str | None:
         if obj.user:
             return obj.user.username
+        else:
+            return None
 
 
 class UserProfileSerializer(serializers.ModelSerializer):
@@ -42,9 +44,11 @@ class UserProfileSerializer(serializers.ModelSerializer):
         ]
 
     @extend_schema_field(UserSerializer)
-    def get_username(self, obj) -> str:
+    def get_username(self, obj) -> str | None:
         if obj.user:
             return obj.user.username
+        else:
+            return None
 
 
 class UserProfileUpdateSerializer(serializers.ModelSerializer):
