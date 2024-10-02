@@ -26,6 +26,13 @@ jobs:
       run: npm run build
       working-directory: ./frontend
 
+    - name: Configure Git
+      run: |
+        git config --global user.email "miloszmaculewicz@gmail.com"
+        git config --global user.name "mldxo"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     - name: Deploy to GitHub Pages
       run: npm run deploy -- -m "Deploy React app to GitHub Pages"
       working-directory: ./frontend
