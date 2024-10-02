@@ -8,6 +8,10 @@ if (debug) {
 
 // backend
 export const API_BASE_URL = API_BASE;
+export const API_POSTS_URL = API_BASE + "/posts/";
+export const API_POSTS_RECENT_URL = API_BASE + "/posts/recent/";
+export const API_POSTS_TRENDING_URL = API_BASE + "/posts/trending/";
+export const API_POSTS_POPULAR_URL = API_BASE + "/posts/popular/";
 
 // frontend
 
