@@ -1,14 +1,14 @@
 # Blog App
 
-[![Django CI](https://github.com/mldxo/blog-app/actions/workflows/django.yml/badge.svg)](https://github.com/mldxo/blog-app/actions/workflows/django.yml)
-[![CodeQL](https://github.com/mldxo/blog-app/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/mldxo/blog-app/actions/workflows/github-code-scanning/codeql)
-[![GitHub Pages](https://github.com/mldxo/blog-app/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/mldxo/blog-app/actions/workflows/pages/pages-build-deployment)
-[![GitHub Tag](https://img.shields.io/github/v/tag/mldxo/blog-app)](https://github.com/mldxo/blog-app/)
-[![License](https://img.shields.io/github/license/mldxo/blog-app)](LICENSE)
+[![Django CI](https://github.com/milosz275/blog-app/actions/workflows/django.yml/badge.svg)](https://github.com/milosz275/blog-app/actions/workflows/django.yml)
+[![CodeQL](https://github.com/milosz275/blog-app/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/milosz275/blog-app/actions/workflows/github-code-scanning/codeql)
+[![GitHub Pages](https://github.com/milosz275/blog-app/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/milosz275/blog-app/actions/workflows/pages/pages-build-deployment)
+[![GitHub Tag](https://img.shields.io/github/v/tag/milosz275/blog-app)](https://github.com/milosz275/blog-app/)
+[![License](https://img.shields.io/github/license/milosz275/blog-app)](LICENSE)
 
 ![Logo](assets/logo.png)
 
-Fullstack [blog](https://github.com/mldxo/blog-app) application with frontend and backend components. The frontend is built with React and the backend is built with Node.js and Express. The frontend and backend are connected with a RESTful API. The Application can be set to either act like personal blog or platform for people to create their blog postings.
+Fullstack [blog](https://github.com/milosz275/blog-app) application with frontend and backend components. The frontend is built with React and the backend is built with Node.js and Express. The frontend and backend are connected with a RESTful API. The Application can be set to either act like personal blog or platform for people to create their blog postings.
 
 ## Schema
 
