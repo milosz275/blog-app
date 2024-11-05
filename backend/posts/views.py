@@ -1,12 +1,11 @@
 import datetime
-from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from rest_framework.views import APIView
 from rest_framework.generics import (
+    GenericAPIView,
     CreateAPIView,
     UpdateAPIView,
     ListAPIView,
-    RetrieveAPIView,
 )
 from rest_framework import status
 from rest_framework.permissions import IsAuthenticated, AllowAny
@@ -54,7 +53,7 @@ class BlogPostDeleteView(APIView):
     queryset = BlogPost.objects.all()
     permission_classes = [IsAuthenticated]
 
-    def delete(self, request, pk):
+    def delete(self, request, pk: int):
         instance = get_object_or_404(BlogPost, pk=pk)
         if instance.user != request.user:
             return Response(
@@ -76,34 +75,37 @@ class BlogPostDetailView(APIView):
     queryset = BlogPost.objects.all()
     permission_classes = [AllowAny]
 
-    def get(self, request, pk):
+    def get(self, request, pk: int):
         instance = self.queryset.get(pk=pk)
         serializer = self.serializer_class(instance)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
 class BlogPostLikeView(APIView):
+    serializer_class = BlogPostDetailSerializer
     permission_classes = [IsAuthenticated]
 
-    def post(self, request, pk):
+    def post(self, request, pk: int):
         post = get_object_or_404(BlogPost, pk=pk)
         post.likes.add(request.user)
         return Response({"detail": "Post liked."}, status=status.HTTP_200_OK)
 
 
 class BlogPostUnlikeView(APIView):
+    serializer_class = BlogPostDetailSerializer
     permission_classes = [IsAuthenticated]
 
-    def post(self, request, pk):
+    def post(self, request, pk: int):
         post = get_object_or_404(BlogPost, pk=pk)
         post.likes.remove(request.user)
         return Response({"detail": "Post unliked."}, status=status.HTTP_200_OK)
 
 
-class BlogPostCommentView(APIView):
+class BlogPostCommentView(GenericAPIView):
+    serializer_class = BlogPostDetailSerializer
     permission_classes = [IsAuthenticated]
 
-    def post(self, request, pk):
+    def post(self, request, pk: int):
         post = get_object_or_404(BlogPost, pk=pk)
         comment = request.data.get("comment")
         if not comment:
@@ -116,9 +118,10 @@ class BlogPostCommentView(APIView):
 
 
 class BlogPostCommentDeleteView(APIView):
+    serializer_class = BlogPostDetailSerializer
     permission_classes = [IsAuthenticated]
 
-    def delete(self, request, pk, comment_id):
+    def delete(self, request, pk: int, comment_id: int):
         post = get_object_or_404(BlogPost, pk=pk)
         comment = get_object_or_404(post.comments, id=comment_id, user=request.user)
         comment.delete()
