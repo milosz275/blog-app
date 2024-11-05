@@ -15,7 +15,7 @@ const Footer = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const userResponse = await fetch("https://api.github.com/users/mldxo");
+                const userResponse = await fetch("https://api.github.com/users/milosz275");
                 if (!userResponse.ok) {
                     const errorData = await userResponse.json();
                     if (errorData.message.includes("API rate limit exceeded")) {
@@ -36,7 +36,7 @@ const Footer = () => {
                     setIsAvatarLoaded(true);
                 };
 
-                const deployResponse = await fetch("https://api.github.com/repos/mldxo/blog-app/deployments");
+                const deployResponse = await fetch("https://api.github.com/repos/milosz275/blog-app/deployments");
                 if (!deployResponse.ok) {
                     const errorData = await deployResponse.json();
                     if (errorData.message.includes("API rate limit exceeded")) {
@@ -70,14 +70,14 @@ const Footer = () => {
             <div className="flex flex-row mx-auto pb-4 cursor-pointer select-none">
                 <div
                     className="hover:opacity-70 transition-all duration-300 hidden sm:block"
-                    onClick={() => window.location.href = "https://mldxo.github.io"}>
+                    onClick={() => window.location.href = "https://milosz275.github.io"}>
                     {github}
                 </div>
                 <div
                     className="flex flex-row mx-auto pb-4 cursor-pointer select-none hover:opacity-70 transition-all duration-300"
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
-                    onClick={() => window.open("https://github.com/mldxo", "_blank")}
+                    onClick={() => window.open("https://github.com/milosz275", "_blank")}
                 >
                     <div className="flex-row justify-center items-center min-w-5 sm:min-w-6 ml-4 sm:ml-2 md:ml-0 -mr-3 sm:-mr-0 hidden sm:flex">
                         <div className="relative">
@@ -88,7 +88,7 @@ const Footer = () => {
                                 <img
                                     src={avatarUrl}
                                     alt="Avatar"
-                                    className={`inline-block object-fit h-4 w-4 rounded-full absolute top-1 left-0 transition-opacity duration-300 ${isHovered && isAvatarLoaded ? 'opacity-100' : 'opacity-0'}`} />
+                                    className={`inline-block object-fit h-4 w-4 rounded-full absolute top-1 left-0 transition-opacity duration-300 ${isHovered && isAvatarLoaded ? 'opacity-100 rounded-full bg-slate-200 dark:bg-github' : 'opacity-0 bg-slate-200 dark:bg-github'}`} />
                             )}
                         </div>
                     </div>
