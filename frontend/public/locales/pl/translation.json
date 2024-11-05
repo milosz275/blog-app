@@ -5,9 +5,11 @@
     "app_name_short": "Blog",
     "app_name_short_description": "Aplikacja blogowa",
     "too_small_width": "Twój wyświetlacz ma za małą rozdzielczość, aby wyświetlić tę stronę.",
+    "back_to_main_page": "Powrót do strony głównej",
     "main_page": {
         "title": "Witamy na Dev Blogu!",
         "description": "Platforma blogowa dla programistów do dzielenia się kodem, projektami i spostrzeżeniami.",
+        "begin_now": "Zacznij teraz",
         "get_started": "Zacznij",
         "learn_more": "Dowiedz się więcej",
         "features": {
@@ -96,6 +98,7 @@
         "password": "Hasło",
         "login": "Zaloguj",
         "register": "Zarejestruj",
+        "confirm": "Potwierdź",
         "forgot_password": "Zapomniałeś hasła?"
     },
     "register": {

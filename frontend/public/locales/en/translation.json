@@ -5,9 +5,11 @@
     "app_name_short": "Blog",
     "app_name_short_description": "A blog app",
     "too_small_width": "Your screen is too small to display this page.",
+    "back_to_main_page": "Back to Main Page",
     "main_page": {
         "title": "Welcome to Dev Blog!",
         "description": "A blog platform for developers to share code, projects, and insights.",
+        "begin_now": "Begin Now",
         "get_started": "Get Started",
         "learn_more": "Learn More",
         "features": {
@@ -96,6 +98,7 @@
         "password": "Password",
         "login": "Login",
         "register": "Register",
+        "confirm": "Confirm",
         "forgot_password": "Forgot password?"
     },
     "register": {
