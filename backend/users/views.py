@@ -5,8 +5,8 @@ from django.forms import EmailField
 from django.core.exceptions import ValidationError
 from rest_framework import status
 from rest_framework.views import APIView
-from rest_framework.generics import CreateAPIView, UpdateAPIView
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.generics import CreateAPIView, UpdateAPIView, GenericAPIView
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
 from rest_framework_simplejwt.views import TokenObtainPairView
 from users.models import UserProfile
@@ -14,6 +14,7 @@ from users.serializers import (
     UserSerializer,
     UserProfileSerializer,
     UserProfileUpdateSerializer,
+    UserExistsSerializer,
 )
 
 
@@ -31,6 +32,25 @@ def isPasswordValid(password):
         return True
     except:
         return False
+
+
+class UserExistsView(GenericAPIView):
+    # Check if a user with the given email address exists
+    serializer_class = UserExistsSerializer
+    permission_classes = [AllowAny]
+
+    def post(self, request):
+        email = request.data.get("email")
+        if not isEmailAddressValid(email):
+            return Response(
+                {"email": ["Provided email is not valid."]},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        if User.objects.filter(username=email).exists():
+            return Response({"exists": True}, status=status.HTTP_200_OK)
+        else:
+            return Response({"exists": False}, status=status.HTTP_200_OK)
 
 
 class LoginView(TokenObtainPairView):
