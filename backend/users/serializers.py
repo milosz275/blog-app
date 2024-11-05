@@ -61,3 +61,12 @@ class UserProfileUpdateSerializer(serializers.ModelSerializer):
         if value and value > datetime.date.today():
             raise serializers.ValidationError("Birth date cannot be in the future.")
         return value
+
+
+class UserExistsSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+    
+    def validate_email(self, value):
+        if User.objects.filter(username=value).exists():
+            raise serializers.ValidationError("User with this email already exists.")
+        return value
