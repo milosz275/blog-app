@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import MainPage from "./pages/MainPage";
 import DebugPage from "./pages/DebugPage";
 import LogoutPage from "./pages/LogoutPage";
+import LoginPage from "./pages/LoginPage";
 import RedirectPage from "./pages/RedirectPage";
 import * as urls from "./urls";
 
@@ -39,6 +40,8 @@ function App() {
 					<Route path={urls.DEBUG_URL} element={<DebugPage />} />
 					<Route path={urls.LOGOUT_URL} element={<LogoutPage />} />
 					<Route path={urls.LOGOUT_URL_PL} element={<LogoutPage />} />
+					<Route path={urls.LOGIN_URL} element={<LoginPage />} />
+					<Route path={urls.LOGIN_URL_PL} element={<LoginPage />} />
 					<Route path="*" element={<RedirectPage />} />
 				</Routes>
 			</BrowserRouter>
