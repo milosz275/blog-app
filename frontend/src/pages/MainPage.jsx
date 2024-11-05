@@ -1,15 +1,17 @@
 
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import TemplatePage from "../pages/TemplatePage";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
 import { Store } from "react-notifications-component";
 import { user } from "../icons";
 import "react-notifications-component/dist/theme.css";
-import { API_POSTS_POPULAR_URL, API_POSTS_RECENT_URL, API_POSTS_TRENDING_URL } from "../urls";
+import { API_POSTS_POPULAR_URL, API_POSTS_RECENT_URL, API_POSTS_TRENDING_URL, LOGIN_URL, LOGIN_URL_PL } from "../urls";
 
 const MainPage = () => {
-	const { t } = useTranslation();
+	const navigate = useNavigate();
+	const { i18n, t } = useTranslation();
 	const [recentPosts, setRecentPosts] = useState([]);
 	const [trendingPosts, setTrendingPosts] = useState([]);
 	const [popularPosts, setPopularPosts] = useState([]);
@@ -146,6 +148,14 @@ const MainPage = () => {
 		fetchPopularPosts();
 	}, []);
 
+	const navigateToLogin = () => {
+		if (i18n.language === "en") {
+			navigate(LOGIN_URL);
+		} else {
+			navigate(LOGIN_URL_PL);
+		}
+	}
+
 	return (
 		<TemplatePage>
 			<div className="flex flex-col w-full justify-center elements-center mx-auto pt-24 pb-16 bg-gradient-to-r from-[rgba(224,227,238,0.42)] to-[rgba(207,214,229,0.37)] dark:from-[rgba(52,58,114,0.5)] dark:to-[rgba(29,58,97,0.61)] backdrop-blur-3xl transition-all duration-300 ease-in-out transform text-center">
@@ -163,7 +173,15 @@ const MainPage = () => {
 						/>
 					</div>
 				</div>
-				<div className="flex flex-col w-full max-w-6xl items-center justify-center mx-auto mt-36 mb-8 select-none">
+				<div className="flex flex-col w-full max-w-6xl items-center justify-center mx-auto mt-24 mb-8 select-none">
+					<div className="relative text-center inline-block px-5 py-2 text-xl font-medium text-white rounded-lg shadow-lg select-none mt-8 sm:mt-0 transition-all duration-200 ease-linear cursor-pointer"
+						onClick={() => navigateToLogin()}
+					>
+						<span className="relative z-10 pointer-events-none">{t("main_page.begin_now")}</span>
+						<span className="absolute inset-0 bg-gradient-to-t from-blue-500 to-purple-500 opacity-70 hover:opacity-100 transition-opacity duration-300 rounded-lg"></span>
+					</div>
+				</div>
+				<div className="flex flex-col w-full max-w-6xl items-center justify-center mx-auto mt-12 mb-8 select-none">
 					<h1 className="text-3xl font-bold text-center hover:scale-105 mb-12 transition-all duration-200 ease-linear px-2">
 						{t("main_page.features.title")}
 					</h1>
