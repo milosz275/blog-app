@@ -1,52 +1,41 @@
 from rest_framework import serializers
 from posts.models import BlogPost
+from drf_spectacular.utils import extend_schema_field
+from drf_spectacular.types import OpenApiTypes
 
 
 class BlogPostSerializer(serializers.ModelSerializer):
     likes_count = serializers.SerializerMethodField()
     comments_count = serializers.SerializerMethodField()
 
-    class Meta:
-        model = BlogPost
-        fields = [
-            "id",
-            "title",
-            "description",
-            "image_data",
-            "updated_at",
-            "created_at",
-            "likes_count",
-            "comments_count",
-        ]
-
+    @extend_schema_field(OpenApiTypes.INT)
     def get_likes_count(self, obj):
         return obj.likes.count()
 
+    @extend_schema_field(OpenApiTypes.INT)
     def get_comments_count(self, obj):
         return obj.comments.count()
+
+    class Meta:
+        model = BlogPost
+        fields = "__all__"
 
 
 class BlogPostDetailSerializer(serializers.ModelSerializer):
     likes_count = serializers.SerializerMethodField()
     comments_count = serializers.SerializerMethodField()
 
-    class Meta:
-        model = BlogPost
-        fields = [
-            "id",
-            "title",
-            "description",
-            "image_data",
-            "content",
-            "updated_at",
-            "created_at",
-        ]
-
+    @extend_schema_field(OpenApiTypes.INT)
     def get_likes_count(self, obj):
         return obj.likes.count()
 
+    @extend_schema_field(OpenApiTypes.INT)
     def get_comments_count(self, obj):
         return obj.comments.count()
+
+    class Meta:
+        model = BlogPost
+        fields = "__all__"
 
 
 class BlogPostUpdateSerializer(serializers.ModelSerializer):
